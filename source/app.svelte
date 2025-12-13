@@ -1,25 +1,26 @@
-<script>
-	import {onMount} from 'svelte';
+<script lang="ts">
+	import { onMount } from 'svelte';
+	import type { ExtensionInfo } from './lib/types';
 	import Extension from './extension.svelte';
-	import {replaceModifierIfMac} from './lib/cmd-key.js';
-	import {focusNext, focusPrevious} from './lib/focus-next.js';
-	import prepareExtensionList from './lib/prepare-extension-list.js';
-	import UndoStack from './lib/undo-stack.js';
-	import optionsStorage, {togglePin} from './options-storage.js';
+	import { replaceModifierIfMac } from './lib/cmd-key';
+	import { focusNext, focusPrevious } from './lib/focus-next';
+	import prepareExtensionList from './lib/prepare-extension-list';
+	import UndoStack from './lib/undo-stack';
+	import optionsStorage, { togglePin } from './options-storage';
 
 	const getI18N = chrome.i18n.getMessage;
 	const undoStack = new UndoStack(window);
 
-	let extensions = [];
-	let searchValue = '';
+	let extensions = $state<ExtensionInfo[]>([]);
+	let searchValue = $state('');
 
 	const options = optionsStorage.getAll();
-	let showExtras = false;
-	let showStickyInfoMessage = !localStorage.getItem('sticky-info-message');
-	let showInfoMessage = !localStorage.getItem('undo-info-message');
-	let userClickedHideInfoMessage = false; // "Disable/enable all" shows the button again, unless the user clicked already "hide" in the current session
+	let showExtras = $state(false);
+	let showStickyInfoMessage = $state(!localStorage.getItem('sticky-info-message'));
+	let showInfoMessage = $state(!localStorage.getItem('undo-info-message'));
+	let userClickedHideInfoMessage = $state(false); // "Disable/enable all" shows the button again, unless the user clicked already "hide" in the current session
 
-	options.then(({showButtons, width, position}) => {
+	options.then(({ showButtons, width, position }) => {
 		if (showButtons === 'always') {
 			showExtras = true;
 		}
@@ -28,7 +29,8 @@
 			document.documentElement.style.width = `${width || 400}px`;
 		}
 	});
-	$: {
+
+	$effect(() => {
 		const keywords = searchValue
 			.toLowerCase()
 			.split(' ')
@@ -38,22 +40,20 @@
 				extension.indexedName.includes(word),
 			);
 		}
-
-		extensions = extensions;
-	}
+	});
 
 	function hideInfoMessage() {
-		localStorage.setItem('undo-info-message', Date.now());
+		localStorage.setItem('undo-info-message', String(Date.now()));
 		showInfoMessage = false;
 		userClickedHideInfoMessage = true;
 	}
 
 	function hideStickyInfoMessage() {
-		localStorage.setItem('sticky-info-message', Date.now());
+		localStorage.setItem('sticky-info-message', String(Date.now()));
 		showStickyInfoMessage = false;
 	}
 
-	function keyboardNavigationHandler(event) {
+	function keyboardNavigationHandler(event: KeyboardEvent) {
 		switch (event.key) {
 			case 'Tab':
 				showExtras = true;
@@ -76,7 +76,7 @@
 		document.body.classList.add('keyboard-navigation');
 	}
 
-	function toggleAll(enable) {
+	function toggleAll(enable: boolean) {
 		const affectedExtensions = extensions.filter(
 			extension => enable !== extension.enabled,
 		);
@@ -88,33 +88,35 @@
 		});
 	}
 
-	function handleUninstalled(deleted) {
-		extensions = extensions.filter(({id}) => id !== deleted);
+	function handleUninstalled(deleted: string) {
+		extensions = extensions.filter(({ id }) => id !== deleted);
 	}
 
-	async function handleInstalled(installed) {
+	async function handleInstalled(installed: chrome.management.ExtensionInfo) {
 		if (installed.type === 'extension') {
 			prepare();
 		}
 	}
 
-	function handleEnabled(updated) {
-		const extension = extensions.find(({id}) => id === updated.id);
-		extension.enabled = true;
-		extensions = extensions;
+	function handleEnabled(updated: chrome.management.ExtensionInfo) {
+		const extension = extensions.find(({ id }) => id === updated.id);
+		if (extension) {
+			extension.enabled = true;
+		}
 	}
 
-	function handleDisabled(updated) {
-		const extension = extensions.find(({id}) => id === updated.id);
-		extension.enabled = false;
-		extensions = extensions;
+	function handleDisabled(updated: chrome.management.ExtensionInfo) {
+		const extension = extensions.find(({ id }) => id === updated.id);
+		if (extension) {
+			extension.enabled = false;
+		}
 	}
 
 	async function prepare() {
 		extensions = await prepareExtensionList(await chrome.management.getAll());
 	}
 
-	async function handlePin(extensionId) {
+	async function handlePin(extensionId: string): Promise<boolean> {
 		const wasPinned = await togglePin(extensionId);
 		await prepare(); // Refresh the list to show new order
 		return wasPinned;
@@ -142,15 +144,16 @@
 
 	// Toggle extra buttons on right click on the name
 	// After the first click, allow the native context menu
-	function onContextMenu(event) {
+	function onContextMenu(event: MouseEvent) {
 		if (!showExtras) {
 			showExtras = true;
 			event.preventDefault();
 		}
 	}
 
-	function handleBurger() {
-		switch (this.value) {
+	function handleBurger(event: Event) {
+		const select = event.target as HTMLSelectElement;
+		switch (select.value) {
 			case 'enable': {
 				toggleAll(true);
 				showInfoMessage = true;
@@ -176,17 +179,17 @@
 			default:
 		}
 
-		this.value = ''; // Reset the select. PreventDefault doesn't work
+		select.value = ''; // Reset the select. PreventDefault doesn't work
 	}
 </script>
 
-<svelte:window on:keydown={keyboardNavigationHandler} />
+<svelte:window onkeydown={keyboardNavigationHandler} />
 <main>
 	{#if showInfoMessage && !userClickedHideInfoMessage}
 		<p class="notice">
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -- Static -->
 			{@html replaceModifierIfMac(getI18N('undoInfoMsg'), 'z')}
-			<a class="hide-action" href="#hide" on:click={hideInfoMessage}
+			<a class="hide-action" href="#hide" onclick={hideInfoMessage}
 				>{getI18N('hideInfoMsg')}</a
 			>
 		</p>
@@ -195,20 +198,20 @@
 		<p class="notice">
 			<!-- eslint-disable-next-line svelte/no-at-html-tags -- Static -->
 			{@html replaceModifierIfMac(getI18N('stickyInfoMsg'), '')}
-			<a class="hide-action" href="#hide" on:click={hideStickyInfoMessage}
+			<a class="hide-action" href="#hide" onclick={hideStickyInfoMessage}
 				>{getI18N('hideInfoMsg')}</a
 			>
 		</p>
 	{/if}
 	<div class="header">
-		<!-- svelte-ignore a11y-autofocus -->
+		<!-- svelte-ignore a11y_autofocus -->
 		<input
 			autofocus
 			placeholder={getI18N('searchTxt')}
 			bind:value={searchValue}
 			type="search"
 		/>
-		<select class="header-burger" on:change={handleBurger}>
+		<select class="header-burger" onchange={handleBurger}>
 			<option value="">…</option>
 			<option value="options">{getI18N('gotoOpt')}</option>
 			<option value="extensions">{getI18N('manage')}</option>
@@ -223,8 +226,8 @@
 					{...extension}
 					bind:enabled={extension.enabled}
 					bind:showExtras
-					on:contextmenu|once={onContextMenu}
-					on:pin={() => handlePin(extension.id)}
+					oncontextmenu={onContextMenu}
+					onpin={() => handlePin(extension.id)}
 					{undoStack}
 				/>
 			{/if}

@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 import it from 'node:test';
 
-import trimName from './trim-name.js';
+import trimName from './trim-name';
 
 it('preserves regular names', () => {
 	assert.equal(trimName('Regular name'), 'Regular name');
@@ -28,3 +28,4 @@ it('trims keywords', () => {
 it('never returns an empty string', () => {
 	assert.equal(trimName('Chrome Extension'), 'Chrome Extension');
 });
+

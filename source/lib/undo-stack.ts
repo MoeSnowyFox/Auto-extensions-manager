@@ -1,13 +1,15 @@
-import {isHoldingModifier} from './cmd-key.js';
+import type { ToggleFunction } from './types';
+import { isHoldingModifier } from './cmd-key';
 
 export default class UndoStack {
-	_undoStack = [];
-	_redoStack = [];
-	constructor(element) {
-		element?.addEventListener('keydown', this.#keyboardEventListener);
+	private _undoStack: [ToggleFunction, ToggleFunction | undefined][] = [];
+	private _redoStack: [ToggleFunction, ToggleFunction | undefined][] = [];
+
+	constructor(element?: Window | HTMLElement) {
+		element?.addEventListener('keydown', this.#keyboardEventListener as EventListener);
 	}
 
-	#keyboardEventListener = event => {
+	#keyboardEventListener = (event: KeyboardEvent): void => {
 		if (event.code === 'KeyZ' && isHoldingModifier(event)) {
 			if (event.shiftKey) {
 				this.redo();
@@ -21,7 +23,7 @@ export default class UndoStack {
 		}
 	};
 
-	undo() {
+	undo(): void {
 		const functions = this._undoStack.pop();
 		if (functions) {
 			console.log('UndoStack: undo');
@@ -33,7 +35,7 @@ export default class UndoStack {
 		}
 	}
 
-	redo() {
+	redo(): void {
 		const functions = this._redoStack.pop();
 		if (functions) {
 			console.log('UndoStack: redo');
@@ -45,7 +47,7 @@ export default class UndoStack {
 		}
 	}
 
-	do(doFunction, undoFunction) {
+	do(doFunction: ToggleFunction, undoFunction?: ToggleFunction): void {
 		console.log('UndoStack: pushed');
 		if (typeof doFunction !== 'function') {
 			throw new TypeError('you must pass at least one function');
@@ -60,8 +62,9 @@ export default class UndoStack {
 		doFunction(true);
 	}
 
-	clear() {
+	clear(): void {
 		this._undoStack.length = 0;
 		this._redoStack.length = 0;
 	}
 }
+

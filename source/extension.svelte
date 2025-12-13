@@ -1,25 +1,47 @@
-<script>
-	// Silence warnings https://github.com/sveltejs/svelte/issues/4652#issuecomment-1666893821
-	// eslint-disable-next-line no-unused-expressions
-	$$restProps;
+<script lang="ts">
+	import type UndoStack from './lib/undo-stack';
+	import pickBestIcon from './lib/icons';
+	import openInTab from './lib/open-in-tab';
+	import trimName from './lib/trim-name';
 
-	import {createEventDispatcher} from 'svelte';
-	import pickBestIcon from './lib/icons.js';
-	import openInTab from './lib/open-in-tab.js';
-	import trimName from './lib/trim-name.js';
+	interface IconInfo {
+		size: number;
+		url: string;
+	}
 
-	export let id;
-	export let name;
-	export let shortName;
-	export let enabled;
-	export let installType;
-	export let homepageUrl;
-	export let updateUrl = undefined; // eslint-disable-line no-undef-init -- Optional svelte property
-	export let optionsUrl;
-	export let icons = undefined; // eslint-disable-line no-undef-init -- Optional svelte property
-	export let showExtras;
-	export let undoStack;
-	export let isPinned = false;
+	interface Props {
+		id: string;
+		name: string;
+		shortName?: string;
+		enabled: boolean;
+		installType: string;
+		homepageUrl?: string;
+		updateUrl?: string;
+		optionsUrl?: string;
+		icons?: IconInfo[];
+		showExtras: boolean;
+		undoStack: UndoStack;
+		isPinned?: boolean;
+		oncontextmenu?: (event: MouseEvent) => void;
+		onpin?: () => void;
+	}
+
+	let {
+		id,
+		name,
+		shortName,
+		enabled = $bindable(),
+		installType,
+		homepageUrl,
+		updateUrl,
+		optionsUrl,
+		icons,
+		showExtras = $bindable(),
+		undoStack,
+		isPinned = false,
+		oncontextmenu,
+		onpin,
+	}: Props = $props();
 
 	const getI18N = chrome.i18n.getMessage;
 	const chromeWebStoreUrl = `https://chrome.google.com/webstore/detail/${id}`;
@@ -28,7 +50,7 @@
 	// The browser will still fill the "short name" with "name" if missing
 	const realName = trimName(shortName ?? name);
 
-	function generateHomeURL() {
+	function generateHomeURL(): string | undefined {
 		if (installType !== 'normal') {
 			return homepageUrl;
 		}
@@ -38,12 +60,10 @@
 			: chromeWebStoreUrl;
 	}
 
-	const dispatch = createEventDispatcher();
-
-	function toggleExtension(event) {
+	function toggleExtension(event: MouseEvent) {
 		// Check if Ctrl/Cmd is held down for pinning
 		if (event.ctrlKey || event.metaKey) {
-			dispatch('pin');
+			onpin?.();
 			return;
 		}
 
@@ -67,13 +87,13 @@
 	<button
 		type="button"
 		class="ext-name"
-		on:click={toggleExtension}
-		on:contextmenu
+		onclick={toggleExtension}
+		oncontextmenu={oncontextmenu}
 	>
 		<img alt="" src={pickBestIcon(icons, 16)} />{realName}
 	</button>
 	{#if optionsUrl && enabled}
-		<a href={optionsUrl} title={getI18N('gotoOpt')} on:click={openInTab}>
+		<a href={optionsUrl} title={getI18N('gotoOpt')} onclick={openInTab}>
 			<img src="icons/options.svg" alt="" />
 		</a>
 	{/if}
@@ -86,14 +106,14 @@
 		<a
 			href="chrome://extensions/?id={id}"
 			title={getI18N('manage')}
-			on:click={openInTab}
+			onclick={openInTab}
 		>
 			<img src="icons/ellipsis.svg" alt="" />
 		</a>
 		<button
 			type="button"
 			title={getI18N('uninstall')}
-			on:click={onUninstallClick}
+			onclick={onUninstallClick}
 		>
 			<img src="icons/bin.svg" alt="" />
 		</button>

@@ -1,6 +1,8 @@
-function focus(selector, next) {
-	const {activeElement} = document;
-	const items = [...document.querySelectorAll(selector)];
+function focus(selector: string, next: boolean): void {
+	const { activeElement } = document;
+	if (!activeElement) return;
+
+	const items = [...document.querySelectorAll<HTMLElement>(selector)];
 	if (!next) {
 		items.reverse();
 	}
@@ -18,13 +20,14 @@ function focus(selector, next) {
 		}
 	}
 
-	items.at(0).focus();
+	items.at(0)?.focus();
 }
 
-export function focusNext(selector) {
+export function focusNext(selector: string): void {
 	focus(selector, true);
 }
 
-export function focusPrevious(selector) {
+export function focusPrevious(selector: string): void {
 	focus(selector, false);
 }
+

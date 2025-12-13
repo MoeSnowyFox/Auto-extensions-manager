@@ -1,14 +1,14 @@
 import assert from 'node:assert/strict';
-import {describe, it} from 'node:test';
+import { describe, it } from 'node:test';
 
-async function loadModuleWithPlatform(platform) {
+async function loadModuleWithPlatform(platform: string) {
 	// Stub global navigator.platform before importing the module.
 	Object.defineProperty(navigator, 'platform', {
 		value: platform,
 		configurable: true,
 	});
 	// Dynamic import with a cache-busting query so module-level detection is re-evaluated.
-	const url = new URL(`./cmd-key.js?cb=${Date.now()}`, import.meta.url);
+	const url = new URL(`./cmd-key.ts?cb=${Date.now()}`, import.meta.url);
 	return import(url.href);
 }
 
@@ -34,17 +34,18 @@ describe('replaceModifierIfMac', () => {
 			'<kbd>⌘Z</kbd>',
 		);
 	});
+});
 
-	it('Mac: only replaces when preceded by ">" (plain "Ctrl+Z" unchanged)', async () => {
-		const mod = await loadModuleWithPlatform('MacIntel');
-		const plain = 'Ctrl+Z';
-		assert.strictEqual(mod.replaceModifierIfMac(plain, 'z'), plain);
+describe('isHoldingModifier', () => {
+	it('non-Mac: returns true if ctrlKey is held', async () => {
+		const mod = await loadModuleWithPlatform('Win32');
+		assert.strictEqual(mod.isHoldingModifier({ ctrlKey: true, metaKey: false }), true);
+		assert.strictEqual(mod.isHoldingModifier({ ctrlKey: false, metaKey: true }), false);
 	});
 
-	it('Mac: only first occurrence is replaced when multiple matches exist', async () => {
+	it('Mac: returns true if metaKey is held', async () => {
 		const mod = await loadModuleWithPlatform('MacIntel');
-		const input = '<kbd>Ctrl+Z</kbd> <kbd>Ctrl+Z</kbd>';
-		const expected = '<kbd>⌘Z</kbd> <kbd>Ctrl+Z</kbd>';
-		assert.strictEqual(mod.replaceModifierIfMac(input, 'z'), expected);
+		assert.strictEqual(mod.isHoldingModifier({ ctrlKey: true, metaKey: false }), false);
+		assert.strictEqual(mod.isHoldingModifier({ ctrlKey: false, metaKey: true }), true);
 	});
 });

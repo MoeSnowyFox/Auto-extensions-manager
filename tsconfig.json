@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"checkJs": false,
+		"isolatedModules": true,
+		"moduleDetection": "force",
+		"noEmit": false,
+		"declaration": false,
+		"strict": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"noFallthroughCasesInSwitch": true,
+		"skipLibCheck": true,
+		"types": ["chrome"],
+		"outDir": "distribution"
+	},
+	"include": ["source/**/*.ts", "source/**/*.svelte"],
+	"exclude": ["**/*.test.ts"]
+}
+

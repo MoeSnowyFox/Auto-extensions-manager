@@ -1,4 +1,9 @@
-export default function pickBestIcon(icons, size = 16) {
+interface IconInfo {
+	size: number;
+	url: string;
+}
+
+export default function pickBestIcon(icons: IconInfo[] | undefined, size: number = 16): string {
 	// Get retina size if necessary
 	size *= globalThis.devicePixelRatio;
 
@@ -16,5 +21,6 @@ export default function pickBestIcon(icons, size = 16) {
 	}
 
 	// If it's not available (e.g. requested 32, available only 16), get the largest one
-	return smallestToLargest.at(-1).url;
+	return smallestToLargest.at(-1)!.url;
 }
+

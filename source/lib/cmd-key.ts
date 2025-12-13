@@ -5,7 +5,7 @@ const isMac = navigator.platform.includes('Mac');
  * - string: the input text (expects patterns like "Ctrl+Z")
  * - key: the single-character key to replace
  */
-export function replaceModifierIfMac(string, key) {
+export function replaceModifierIfMac(string: string, key: string): string {
 	if (!isMac) {
 		return string;
 	}
@@ -20,6 +20,6 @@ export function replaceModifierIfMac(string, key) {
  * - Mac => metaKey (⌘)
  * - others => ctrlKey
  */
-export function isHoldingModifier(event) {
+export function isHoldingModifier(event: KeyboardEvent | MouseEvent): boolean {
 	return isMac ? event.metaKey : event.ctrlKey;
 }

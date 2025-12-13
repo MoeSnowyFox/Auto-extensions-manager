@@ -1,7 +1,8 @@
 import process from 'node:process';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import {copy} from '@web/rollup-plugin-copy';
+import typescript from '@rollup/plugin-typescript';
+import { copy } from '@web/rollup-plugin-copy';
 import cleanup from 'rollup-plugin-cleanup';
 import del from 'rollup-plugin-delete';
 import livereload from 'rollup-plugin-livereload';
@@ -11,9 +12,9 @@ const production = !process.env.ROLLUP_WATCH;
 
 const config = {
 	input: {
-		main: 'source/main.js',
-		'options/options': 'source/options/options.js',
-		background: 'source/background.js',
+		main: 'source/main.ts',
+		'options/options': 'source/options/options.ts',
+		background: 'source/background.ts',
 	},
 	output: {
 		sourcemap: !production,
@@ -21,27 +22,33 @@ const config = {
 		dir: 'distribution',
 	},
 	plugins: [
+		del({
+			targets: ['distribution'],
+			runOnce: true,
+		}),
 		svelte({
 			compilerOptions: {
-				// Enable run-time checks when not in production
 				dev: !production,
 			},
 		}),
-		commonjs(),
+		typescript({
+			sourceMap: !production,
+			inlineSources: !production,
+			include: ['source/**/*.ts'],
+			exclude: ['**/*.test.ts'],
+		}),
 		resolve({
 			browser: true,
 			dedupe: ['svelte'],
+			extensions: ['.ts', '.js', '.svelte'],
 		}),
+		commonjs(),
 		copy({
 			rootDir: './source',
 			patterns: '**/*',
-			exclude: ['**/*.js', '**/*.svelte'],
+			exclude: ['**/*.ts', '**/*.svelte'],
 		}),
 		cleanup(),
-		del({
-			targets: ['distribution'],
-			runOnce: true, // `false` would be nice, but it deletes the files too early, causing two extension reloads
-		}),
 		!production && livereload('distribution'),
 	],
 };

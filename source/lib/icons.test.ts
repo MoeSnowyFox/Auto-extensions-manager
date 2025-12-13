@@ -1,15 +1,14 @@
 import assert from 'node:assert';
 import test from 'node:test';
-import pickBestIcon from './icons.js';
+import pickBestIcon from './icons';
 
 const manifest = [
-	{url: '16.svg', size: 16},
-	{url: '32.svg', size: 32},
+	{ url: '16.svg', size: 16 },
+	{ url: '32.svg', size: 32 },
 ];
 
 test('pickBestIcon', () => {
 	globalThis.devicePixelRatio = 1;
-	assert.equal(pickBestIcon(), 'icons/puzzle.svg');
 	assert.equal(pickBestIcon(undefined), 'icons/puzzle.svg');
 	assert.equal(pickBestIcon([]), 'icons/puzzle.svg');
 	assert.equal(pickBestIcon(manifest), '16.svg');
@@ -22,3 +21,4 @@ test('pickBestIcon', () => {
 	assert.equal(pickBestIcon(manifest, 16), '32.svg');
 	assert.equal(pickBestIcon(manifest, 32), '32.svg');
 });
+

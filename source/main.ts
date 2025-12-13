@@ -1,9 +1,9 @@
+import { mount } from 'svelte';
 import App from './app.svelte';
-import fitWindow from './lib/fit-window.js';
-import preventMultipleWindows from './lib/single-window.js';
+import fitWindow from './lib/fit-window';
+import preventMultipleWindows from './lib/single-window';
 
-// eslint-disable-next-line no-new -- Tell this to Svelte
-new App({
+mount(App, {
 	target: document.body,
 });
 
