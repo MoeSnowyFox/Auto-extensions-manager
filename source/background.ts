@@ -18,8 +18,9 @@ chrome.action.onClicked.addListener(async () => {
 	}
 
 	if (position === 'window') {
-		const width = 420;
-		const height = 600;
+		// Initial size, fitWindow will adjust to exact content size
+		const width = 350;
+		const height = 200;
 		const currentWindow = await chrome.windows.getCurrent();
 		await chrome.windows.create({
 			type: 'popup',
