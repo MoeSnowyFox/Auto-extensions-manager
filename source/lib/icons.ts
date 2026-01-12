@@ -23,4 +23,3 @@ export default function pickBestIcon(icons: IconInfo[] | undefined, size: number
 	// If it's not available (e.g. requested 32, available only 16), get the largest one
 	return smallestToLargest.at(-1)!.url;
 }
-

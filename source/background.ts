@@ -8,7 +8,7 @@ chrome.storage.onChanged.addListener(async (changes, areaName) => {
 
 // Must be registered on the top level
 chrome.action.onClicked.addListener(async () => {
-	let { position, width } = await optionsStorage.getAll();
+	const { position } = await optionsStorage.getAll();
 
 	// 'popup' and 'sidebar' are handled by the browser
 
@@ -18,16 +18,16 @@ chrome.action.onClicked.addListener(async () => {
 	}
 
 	if (position === 'window') {
-		const parsedWidth = width === '' ? 400 : Number.parseInt(width, 10); // Must be an integer
+		const width = 420;
 		const height = 600;
 		const currentWindow = await chrome.windows.getCurrent();
 		await chrome.windows.create({
 			type: 'popup',
 			url: chrome.runtime.getURL('index.html?auto-fit=true'),
-			width: parsedWidth,
+			width,
 			height,
 			top: currentWindow.top! + Math.round((currentWindow.height! - height) / 2),
-			left: currentWindow.left! + Math.round((currentWindow.width! - parsedWidth) / 2),
+			left: currentWindow.left! + Math.round((currentWindow.width! - width) / 2),
 		});
 	}
 });
@@ -36,4 +36,3 @@ matchOptions();
 
 // DEVELOPMENT MODE: uncomment this so the tab will reopen on extension reload
 // chrome.tabs.create({url: chrome.runtime.getURL('index.html')});
-

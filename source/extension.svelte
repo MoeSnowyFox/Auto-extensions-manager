@@ -22,6 +22,7 @@
 		showExtras: boolean;
 		undoStack: UndoStack;
 		isPinned?: boolean;
+		mayDisable?: boolean;
 		oncontextmenu?: (event: MouseEvent) => void;
 		onpin?: () => void;
 	}
@@ -39,31 +40,37 @@
 		showExtras = $bindable(),
 		undoStack,
 		isPinned = false,
+		mayDisable = true,
 		oncontextmenu,
 		onpin,
 	}: Props = $props();
 
 	const getI18N = chrome.i18n.getMessage;
-	const chromeWebStoreUrl = `https://chrome.google.com/webstore/detail/${id}`;
-	const edgeWebStoreUrl = `https://microsoftedge.microsoft.com/addons/detail/${id}`;
-	const url = generateHomeURL();
 	// The browser will still fill the "short name" with "name" if missing
-	const realName = trimName(shortName ?? name);
+	const realName = $derived(trimName(shortName ?? name));
+	// Tooltip for locked extensions based on current state
+	const lockTitle = $derived(enabled ? getI18N('cannotDisable') : getI18N('cannotEnable'));
 
-	function generateHomeURL(): string | undefined {
+	const url = $derived.by(() => {
 		if (installType !== 'normal') {
 			return homepageUrl;
 		}
-
+		const chromeWebStoreUrl = `https://chrome.google.com/webstore/detail/${id}`;
+		const edgeWebStoreUrl = `https://microsoftedge.microsoft.com/addons/detail/${id}`;
 		return updateUrl?.startsWith('https://edge.microsoft.com')
 			? edgeWebStoreUrl
 			: chromeWebStoreUrl;
-	}
+	});
 
 	function toggleExtension(event: MouseEvent) {
 		// Check if Ctrl/Cmd is held down for pinning
 		if (event.ctrlKey || event.metaKey) {
 			onpin?.();
+			return;
+		}
+
+		// Skip if extension cannot be modified by user
+		if (!mayDisable) {
 			return;
 		}
 
@@ -90,7 +97,7 @@
 		onclick={toggleExtension}
 		oncontextmenu={oncontextmenu}
 	>
-		<img alt="" src={pickBestIcon(icons, 16)} />{realName}
+		<img alt="" src={pickBestIcon(icons, 16)} />{realName}{#if !mayDisable}<img class="lock-icon" src="icons/lock.svg" alt="" title={lockTitle} />{/if}
 	</button>
 	{#if optionsUrl && enabled}
 		<a href={optionsUrl} title={getI18N('gotoOpt')} onclick={openInTab}>

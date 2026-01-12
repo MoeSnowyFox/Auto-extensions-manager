@@ -1,6 +1,8 @@
 function focus(selector: string, next: boolean): void {
 	const { activeElement } = document;
-	if (!activeElement) return;
+	if (!activeElement) {
+		return;
+	}
 
 	const items = [...document.querySelectorAll<HTMLElement>(selector)];
 	if (!next) {
@@ -30,4 +32,3 @@ export function focusNext(selector: string): void {
 export function focusPrevious(selector: string): void {
 	focus(selector, false);
 }
-

@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "This extension cannot be disabled"
+	},
+	"cannotEnable": {
+		"message": "This extension cannot be enabled"
+	},
 	"disAll": {
 		"message": "Disable all"
 	},

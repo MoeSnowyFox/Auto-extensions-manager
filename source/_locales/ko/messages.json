@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "이 확장 프로그램을 비활성화할 수 없습니다"
+	},
+	"cannotEnable": {
+		"message": "이 확장 프로그램을 활성화할 수 없습니다"
+	},
 	"disAll": {
 		"message": "모든 확장 기능 사용 중지"
 	},

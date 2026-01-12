@@ -1,4 +1,6 @@
-/* RESETS */
+/* =============================================
+   BASE STYLES - Common styles for all modes
+   ============================================= */
 :root {
 	--margin: 8px;
 	--ext-icon-margin: 0.3em;
@@ -11,11 +13,8 @@
 }
 
 body {
-	width: auto;
-	margin: auto;
-	max-width: 800px;
+	margin: 0;
 	padding: var(--margin);
-	direction: auto;
 	background-color: var(--background-color);
 }
 
@@ -80,7 +79,7 @@ button:hover,
 }
 
 /**
- * HIDE MESSAGE
+ * NOTICE MESSAGE
  */
 .notice {
 	background: #8882;
@@ -150,6 +149,14 @@ button:hover,
 	padding: 0 var(--margin);
 }
 
+.ext-name .lock-icon {
+	width: 12px;
+	height: 12px;
+	padding: 0 4px;
+	opacity: 50%;
+	vertical-align: -1px;
+}
+
 .ext > :not(.ext-name) {
 	padding-inline: 0.3em;
 	opacity: 20%;
@@ -167,6 +174,52 @@ button:hover,
 	opacity: 100%;
 }
 
+/* =============================================
+   MODE: POPUP (Menu) - Responsive layout
+   ============================================= */
+body.mode-popup {
+	width: fit-content;
+	min-width: 350px;
+	max-width: 800px;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+
+/* =============================================
+   MODE: WINDOW (Popup window) - Auto-fit to content
+   ============================================= */
+body.mode-window {
+	/* Width fills window, height controlled by fit-window.ts */
+	width: 100%;
+	min-width: 350px;
+	max-width: none;
+	box-sizing: border-box;
+	/* Reserve scrollbar space to prevent layout shift when scrollbar appears */
+	overflow-y: auto;
+	scrollbar-gutter: stable;
+}
+
+/* =============================================
+   MODE: TAB - Full width, responsive
+   ============================================= */
+body.mode-tab {
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* =============================================
+   MODE: SIDEBAR - Full height, responsive width
+   ============================================= */
+body.mode-sidebar {
+	width: 100%;
+	min-height: 100vh;
+	box-sizing: border-box;
+}
+
+/* =============================================
+   DARK MODE
+   ============================================= */
 @media (prefers-color-scheme: dark) {
 	body {
 		color: #e8eaed;

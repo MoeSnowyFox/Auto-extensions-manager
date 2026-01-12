@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "この拡張機能は無効にできません"
+	},
+	"cannotEnable": {
+		"message": "この拡張機能は有効にできません"
+	},
 	"disAll": {
 		"message": "すべての拡張機能を無効にする"
 	},

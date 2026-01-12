@@ -4,4 +4,3 @@ export default function openInTab(event: MouseEvent): void {
 	chrome.tabs.create({ url: target.href });
 	event.preventDefault();
 }
-

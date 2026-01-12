@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "לא ניתן להשבית תוסף זה"
+	},
+	"cannotEnable": {
+		"message": "לא ניתן להפעיל תוסף זה"
+	},
 	"disAll": {
 		"message": "להשבית את כל התוספים"
 	},

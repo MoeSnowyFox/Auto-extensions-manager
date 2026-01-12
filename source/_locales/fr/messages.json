@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "Cette extension ne peut pas être désactivée"
+	},
+	"cannotEnable": {
+		"message": "Cette extension ne peut pas être activée"
+	},
 	"disAll": {
 		"message": "Désactiver toutes les extensions",
 		"hash": "a9f66d43cfde31fd3cd61c3627eec653"

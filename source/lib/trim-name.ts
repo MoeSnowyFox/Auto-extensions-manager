@@ -12,4 +12,3 @@ export default function trimName(name: string): string {
 	// In the unlikely scenario that the name is trimmed entirely, return the original name
 	return trimmed || name;
 }
-

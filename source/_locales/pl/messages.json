@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "Tego rozszerzenia nie można wyłączyć"
+	},
+	"cannotEnable": {
+		"message": "Tego rozszerzenia nie można włączyć"
+	},
 	"disAll": {
 		"message": "Wyłącz wszystko",
 		"hash": "a9f66d43cfde31fd3cd61c3627eec653"

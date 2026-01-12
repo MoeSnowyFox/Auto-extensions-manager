@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "无法禁用此扩展"
+	},
+	"cannotEnable": {
+		"message": "无法启用此扩展"
+	},
 	"disAll": {
 		"message": "全部禁用"
 	},

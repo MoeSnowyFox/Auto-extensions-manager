@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "Deze extensie kan niet worden uitgeschakeld"
+	},
+	"cannotEnable": {
+		"message": "Deze extensie kan niet worden ingeschakeld"
+	},
 	"disAll": {
 		"message": "Alles uitschakelen",
 		"hash": "a9f66d43cfde31fd3cd61c3627eec653"

@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "Questa estensione non può essere disattivata"
+	},
+	"cannotEnable": {
+		"message": "Questa estensione non può essere attivata"
+	},
 	"disAll": {
 		"message": "Disattiva tutte",
 		"hash": "a9f66d43cfde31fd3cd61c3627eec653"

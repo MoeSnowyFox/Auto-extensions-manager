@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "Bu uzantı devre dışı bırakılamaz"
+	},
+	"cannotEnable": {
+		"message": "Bu uzantı etkinleştirilemez"
+	},
 	"disAll": {
 		"message": "Tümünü devre dışı bırak",
 		"hash": "a9f66d43cfde31fd3cd61c3627eec653"

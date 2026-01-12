@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import type { ExtensionInfo } from './lib/types';
+	import { onMount } from 'svelte';
 	import Extension from './extension.svelte';
 	import { replaceModifierIfMac } from './lib/cmd-key';
 	import { focusNext, focusPrevious } from './lib/focus-next';
@@ -20,14 +20,13 @@
 	let showInfoMessage = $state(!localStorage.getItem('undo-info-message'));
 	let userClickedHideInfoMessage = $state(false); // "Disable/enable all" shows the button again, unless the user clicked already "hide" in the current session
 
-	options.then(({ showButtons, width, position }) => {
+	options.then(({ showButtons, position }) => {
 		if (showButtons === 'always') {
 			showExtras = true;
 		}
 
-		if (position === 'popup' || position === 'window') {
-			document.documentElement.style.width = `${width || 400}px`;
-		}
+		// Set mode class on body for CSS styling
+		document.body.classList.add(`mode-${position}`);
 	});
 
 	$effect(() => {
@@ -78,7 +77,7 @@
 
 	function toggleAll(enable: boolean) {
 		const affectedExtensions = extensions.filter(
-			extension => enable !== extension.enabled,
+			extension => enable !== extension.enabled && extension.mayDisable !== false,
 		);
 
 		undoStack.do(toggle => {
@@ -122,8 +121,8 @@
 		return wasPinned;
 	}
 
-	onMount(async () => {
-		await prepare();
+	onMount(() => {
+		prepare();
 
 		// Add listeners
 		chrome.management.onUninstalled.addListener(handleUninstalled);

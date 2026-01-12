@@ -1,4 +1,8 @@
+// eslint-disable-next-line ts/ban-ts-comment
+// @ts-expect-error
 import assert from 'node:assert/strict';
+// eslint-disable-next-line ts/ban-ts-comment
+// @ts-expect-error
 import { describe, it } from 'node:test';
 
 async function loadModuleWithPlatform(platform: string) {

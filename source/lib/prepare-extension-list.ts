@@ -1,5 +1,5 @@
 import type { ExtensionInfo } from './types';
-import optionsStorage from '../options-storage';
+import optionsStorage, { getPinnedExtensions } from '../options-storage';
 
 function fillInTheBlanks(extension: chrome.management.ExtensionInfo, isPinned: boolean = false): ExtensionInfo {
 	return {
@@ -11,7 +11,8 @@ function fillInTheBlanks(extension: chrome.management.ExtensionInfo, isPinned: b
 }
 
 export default async function prepareExtensionList(extensions: chrome.management.ExtensionInfo[]): Promise<ExtensionInfo[]> {
-	const { pinnedExtensions } = await optionsStorage.getAll();
+	const options = await optionsStorage.getAll();
+	const pinnedExtensions = getPinnedExtensions(options);
 
 	return extensions
 		.filter(({ type, id }) => type === 'extension' && id !== chrome.runtime.id)
@@ -35,4 +36,3 @@ export default async function prepareExtensionList(extensions: chrome.management
 			fillInTheBlanks(extension, pinnedExtensions.includes(extension.id)),
 		);
 }
-

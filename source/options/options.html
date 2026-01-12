@@ -25,10 +25,6 @@
 		ul {
 			padding-left: 1em;
 		}
-		p:has([value='tab']:checked, [value='sidebar']:checked)
-			~ p:has(label[for='width']) {
-			display: none;
-		}
 		/* TODO: Drop after https://github.com/fregante/webext-base-css/issues/18 */
 		hr {
 			--body-margin-h: 8px;
@@ -56,10 +52,6 @@
 				<option value="tab">Tab</option>
 				<option value="sidebar">Sidebar</option>
 			</select>
-		</p>
-		<p>
-			<label for="width"> Width <small>(in pixels)</small> </label>
-			<input type="text" name="width" id="width" placeholder="400" size="5" />
 		</p>
 	</form>
 	<hr />

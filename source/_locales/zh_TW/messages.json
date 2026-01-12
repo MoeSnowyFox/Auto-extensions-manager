@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "無法禁用此擴充功能"
+	},
+	"cannotEnable": {
+		"message": "無法啟用此擴充功能"
+	},
 	"disAll": {
 		"message": "全部禁用",
 		"hash": "a9f66d43cfde31fd3cd61c3627eec653"

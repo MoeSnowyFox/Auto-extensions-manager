@@ -1,4 +1,10 @@
 {
+	"cannotDisable": {
+		"message": "Diese Erweiterung kann nicht deaktiviert werden"
+	},
+	"cannotEnable": {
+		"message": "Diese Erweiterung kann nicht aktiviert werden"
+	},
 	"disAll": {
 		"message": "Alle ausschalten"
 	},
