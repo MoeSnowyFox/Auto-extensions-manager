@@ -1,42 +1,51 @@
 import type { ExtensionInfo } from './types';
 import optionsStorage, { getPinnedExtensions } from '../options-storage';
-import { setExtensionEnabledSafe } from './management';
 
-/**
- * Check if an extension can actually be modified by attempting to set its current state
- * This catches cases where mayDisable is true but the extension still can't be modified
- * (e.g., "This extension is no longer supported and has been disabled")
- * @param extension - The extension to check
- * @returns Promise resolving to true if the extension can be modified
- */
-async function checkCanModify(extension: chrome.management.ExtensionInfo): Promise<boolean> {
-	// First check Chrome's built-in property
-	if (!extension.mayDisable) {
-		return false;
+const IMMUTABLE_CACHE_KEY = 'immutable-extensions-cache';
+
+export function getImmutableExtensions(): string[] {
+	try {
+		return JSON.parse(localStorage.getItem(IMMUTABLE_CACHE_KEY) || '[]');
+	} catch {
+		return [];
 	}
+}
 
-	// Some extensions report mayDisable=true but still can't be toggled (policy/deprecated/etc.)
-	return setExtensionEnabledSafe(extension.id, extension.enabled, { swallow: true });
+export function addImmutableExtension(id: string): void {
+	const list = getImmutableExtensions();
+	if (!list.includes(id)) {
+		list.push(id);
+		localStorage.setItem(IMMUTABLE_CACHE_KEY, JSON.stringify(list));
+	}
+}
+
+export function removeImmutableExtension(id: string): void {
+	const list = getImmutableExtensions();
+	const index = list.indexOf(id);
+	if (index !== -1) {
+		list.splice(index, 1);
+		localStorage.setItem(IMMUTABLE_CACHE_KEY, JSON.stringify(list));
+	}
 }
 
 /**
  * Enhances the raw Chrome extension info with additional properties
  * @param extension - The raw Chrome extension info
  * @param isPinned - Whether the extension is pinned by user
- * @param canModify - Whether the extension can actually be modified
+ * @param isImmutable - Whether the extension is known to be immutable (from cache)
  * @returns Enhanced extension info with additional properties
  */
 function enhanceExtensionInfo(
 	extension: chrome.management.ExtensionInfo,
 	isPinned: boolean = false,
-	canModify: boolean = true,
+	isImmutable: boolean = false,
 ): ExtensionInfo {
 	return {
 		...extension,
 		shown: true,
 		indexedName: extension.name.toLowerCase(),
 		isPinned,
-		mayDisable: canModify,
+		mayDisable: extension.mayDisable && !isImmutable,
 	};
 }
 
@@ -84,18 +93,14 @@ export default async function prepareExtensionList(extensions: chrome.management
 
 	// Sort extensions
 	const sortedExtensions = sortExtensions(filteredExtensions, pinnedExtensions);
-
-	// Check which extensions can actually be modified (in parallel)
-	const canModifyResults = await Promise.all(
-		sortedExtensions.map(ext => checkCanModify(ext)),
-	);
+	const immutableExtensions = getImmutableExtensions();
 
 	// Enhance with additional properties
-	return sortedExtensions.map((extension, index) =>
+	return sortedExtensions.map(extension =>
 		enhanceExtensionInfo(
 			extension,
 			pinnedExtensions.includes(extension.id),
-			canModifyResults[index],
+			immutableExtensions.includes(extension.id),
 		),
 	);
 }

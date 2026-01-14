@@ -1,9 +1,10 @@
 <script lang="ts">
 	import type UndoStack from './lib/undo-stack';
 	import pickBestIcon from './lib/icons';
-	import openInTab from './lib/open-in-tab';
-	import trimName from './lib/trim-name';
 	import { setExtensionEnabledSafe } from './lib/management';
+	import openInTab from './lib/open-in-tab';
+	import { addImmutableExtension } from './lib/prepare-extension-list';
+	import trimName from './lib/trim-name';
 
 	interface IconInfo {
 		size: number;
@@ -91,6 +92,7 @@
 			if (!ok) {
 				// Freeze this item: some extensions report mayDisable=true but still can't be toggled.
 				mayDisable = false;
+				addImmutableExtension(id);
 			}
 		});
 	}

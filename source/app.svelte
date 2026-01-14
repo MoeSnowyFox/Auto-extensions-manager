@@ -4,7 +4,7 @@
 	import Extension from './extension.svelte';
 	import { replaceModifierIfMac } from './lib/cmd-key';
 	import { focusNext, focusPrevious } from './lib/focus-next';
-	import prepareExtensionList from './lib/prepare-extension-list';
+	import prepareExtensionList, { removeImmutableExtension } from './lib/prepare-extension-list';
 	import UndoStack from './lib/undo-stack';
 	import optionsStorage, { togglePin } from './options-storage';
 	import { setExtensionEnabledSafe } from './lib/management';
@@ -97,6 +97,7 @@
 
 	async function handleInstalled(installed: chrome.management.ExtensionInfo) {
 		if (installed.type === 'extension') {
+			removeImmutableExtension(installed.id); // Maybe it was updated or reinstalled and is now fixable
 			prepare();
 		}
 	}
