@@ -2,7 +2,7 @@ import process from 'node:process';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
-import { copy } from '@web/rollup-plugin-copy';
+import {copy} from '@web/rollup-plugin-copy';
 import cleanup from 'rollup-plugin-cleanup';
 import del from 'rollup-plugin-delete';
 import livereload from 'rollup-plugin-livereload';
@@ -14,6 +14,7 @@ const config = {
 	input: {
 		main: 'source/main.ts',
 		'options/options': 'source/options/options.ts',
+		'profiles/profiles': 'source/profiles/profiles.ts',
 		background: 'source/background.ts',
 	},
 	output: {

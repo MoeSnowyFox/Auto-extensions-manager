@@ -10,7 +10,7 @@
 export async function setExtensionEnabledSafe(
 	id: string,
 	enabled: boolean,
-	options: { swallow?: boolean } = {},
+	options: {swallow?: boolean} = {},
 ): Promise<boolean> {
 	const swallow = options.swallow ?? false;
 

@@ -33,6 +33,30 @@
 			border: none;
 			border-bottom: 1px solid #aaa4;
 		}
+		.profile-link {
+			display: block;
+			margin: 15px 0;
+			padding: 12px 16px;
+			background: #e3f2fd;
+			border: 1px solid #90caf9;
+			border-radius: 8px;
+			text-decoration: none;
+			color: #1565c0;
+			transition: all 0.2s;
+		}
+		.profile-link:hover {
+			background: #bbdefb;
+			border-color: #64b5f6;
+		}
+		.profile-link strong {
+			display: block;
+			font-size: 1.1em;
+			margin-bottom: 4px;
+		}
+		.profile-link span {
+			font-size: 0.9em;
+			color: #666;
+		}
 	</style>
 	<script type="module" defer src="options.js"></script>
 	<h1>One-Click Extensions Manager</h1>
@@ -54,6 +78,11 @@
 			</select>
 		</p>
 	</form>
+	<hr />
+	<a href="../profiles/profiles.html" class="profile-link" target="_self">
+		<strong>⚙️ Profile Groups</strong>
+		<span>Automatically enable/disable extensions based on website URLs</span>
+	</a>
 	<hr />
 	<p>
 		If you find this useful, consider supporting its development by donating or

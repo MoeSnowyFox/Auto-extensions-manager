@@ -1,5 +1,5 @@
 function focus(selector: string, next: boolean): void {
-	const { activeElement } = document;
+	const {activeElement} = document;
 	if (!activeElement) {
 		return;
 	}

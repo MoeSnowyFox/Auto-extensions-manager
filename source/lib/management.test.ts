@@ -3,9 +3,9 @@
 import assert from 'node:assert/strict';
 // eslint-disable-next-line ts/ban-ts-comment
 // @ts-expect-error
-import { describe, it } from 'node:test';
+import {describe, it} from 'node:test';
 
-import { setExtensionEnabledSafe } from './management';
+import {setExtensionEnabledSafe} from './management';
 
 describe('setExtensionEnabledSafe', () => {
 	it('returns false when swallow=true and runtime.lastError is set', async () => {
@@ -17,13 +17,15 @@ describe('setExtensionEnabledSafe', () => {
 				},
 				management: {
 					setEnabled: (_id: string, _enabled: boolean, cb: () => void) => {
-						(globalThis as any).chrome.runtime.lastError = { message: 'cannot be modified by user' };
+						(globalThis as any).chrome.runtime.lastError = {
+							message: 'cannot be modified by user',
+						};
 						cb();
 					},
 				},
 			};
 
-			const ok = await setExtensionEnabledSafe('x', true, { swallow: true });
+			const ok = await setExtensionEnabledSafe('x', true, {swallow: true});
 			assert.equal(ok, false);
 		} finally {
 			(globalThis as any).chrome = previousChrome;
@@ -39,7 +41,9 @@ describe('setExtensionEnabledSafe', () => {
 				},
 				management: {
 					setEnabled: (_id: string, _enabled: boolean, cb: () => void) => {
-						(globalThis as any).chrome.runtime.lastError = { message: 'cannot be modified by user' };
+						(globalThis as any).chrome.runtime.lastError = {
+							message: 'cannot be modified by user',
+						};
 						cb();
 					},
 				},

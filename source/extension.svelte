@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type UndoStack from './lib/undo-stack';
 	import pickBestIcon from './lib/icons';
-	import { setExtensionEnabledSafe } from './lib/management';
+	import {setExtensionEnabledSafe} from './lib/management';
 	import openInTab from './lib/open-in-tab';
-	import { addImmutableExtension } from './lib/prepare-extension-list';
+	import {addImmutableExtension} from './lib/prepare-extension-list';
 	import trimName from './lib/trim-name';
 
 	interface IconInfo {
@@ -51,7 +51,9 @@
 	// The browser will still fill the "short name" with "name" if missing
 	const realName = $derived(trimName(shortName ?? name));
 	// Tooltip for locked extensions based on current state
-	const lockTitle = $derived(enabled ? getI18N('cannotDisable') : getI18N('cannotEnable'));
+	const lockTitle = $derived(
+		enabled ? getI18N('cannotDisable') : getI18N('cannotEnable'),
+	);
 
 	const url = $derived.by(() => {
 		if (installType !== 'normal') {
@@ -87,8 +89,10 @@
 
 		const wasEnabled = enabled;
 
-		undoStack.do(async (toggle) => {
-			const ok = await setExtensionEnabledSafe(id, toggle !== wasEnabled, { swallow: true });
+		undoStack.do(async toggle => {
+			const ok = await setExtensionEnabledSafe(id, toggle !== wasEnabled, {
+				swallow: true,
+			});
 			if (!ok) {
 				// Freeze this item: some extensions report mayDisable=true but still can't be toggled.
 				mayDisable = false;
@@ -111,9 +115,14 @@
 		type="button"
 		class="ext-name"
 		onclick={toggleExtension}
-		oncontextmenu={oncontextmenu}
+		{oncontextmenu}
 	>
-		<img alt="" src={pickBestIcon(icons, 16)} />{realName}{#if !mayDisable}<img class="lock-icon" src="icons/lock.svg" alt="" title={lockTitle} />{/if}
+		<img alt="" src={pickBestIcon(icons, 16)} />{realName}{#if !mayDisable}<img
+				class="lock-icon"
+				src="icons/lock.svg"
+				alt=""
+				title={lockTitle}
+			/>{/if}
 	</button>
 	{#if optionsUrl && enabled}
 		<a href={optionsUrl} title={getI18N('gotoOpt')} onclick={openInTab}>

@@ -1,13 +1,15 @@
 <script lang="ts">
-	import type { ExtensionInfo } from './lib/types';
-	import { onMount } from 'svelte';
+	import type {ExtensionInfo} from './lib/types';
+	import {onMount} from 'svelte';
 	import Extension from './extension.svelte';
-	import { replaceModifierIfMac } from './lib/cmd-key';
-	import { focusNext, focusPrevious } from './lib/focus-next';
-	import prepareExtensionList, { removeImmutableExtension } from './lib/prepare-extension-list';
+	import {replaceModifierIfMac} from './lib/cmd-key';
+	import {focusNext, focusPrevious} from './lib/focus-next';
+	import prepareExtensionList, {
+		removeImmutableExtension,
+	} from './lib/prepare-extension-list';
 	import UndoStack from './lib/undo-stack';
-	import optionsStorage, { togglePin } from './options-storage';
-	import { setExtensionEnabledSafe } from './lib/management';
+	import optionsStorage, {togglePin} from './options-storage';
+	import {setExtensionEnabledSafe} from './lib/management';
 
 	const getI18N = chrome.i18n.getMessage;
 	const undoStack = new UndoStack(window);
@@ -17,11 +19,13 @@
 
 	const options = optionsStorage.getAll();
 	let showExtras = $state(false);
-	let showStickyInfoMessage = $state(!localStorage.getItem('sticky-info-message'));
+	let showStickyInfoMessage = $state(
+		!localStorage.getItem('sticky-info-message'),
+	);
 	let showInfoMessage = $state(!localStorage.getItem('undo-info-message'));
 	let userClickedHideInfoMessage = $state(false); // "Disable/enable all" shows the button again, unless the user clicked already "hide" in the current session
 
-	options.then(({ showButtons, position }) => {
+	options.then(({showButtons, position}) => {
 		if (showButtons === 'always') {
 			showExtras = true;
 		}
@@ -78,12 +82,17 @@
 
 	function toggleAll(enable: boolean) {
 		const affectedExtensions = extensions.filter(
-			extension => enable !== extension.enabled && extension.mayDisable === true,
+			extension =>
+				enable !== extension.enabled && extension.mayDisable === true,
 		);
 
-		undoStack.do(async (toggle) => {
+		undoStack.do(async toggle => {
 			for (const extension of affectedExtensions) {
-				const ok = await setExtensionEnabledSafe(extension.id, enable ? toggle : !toggle, { swallow: true });
+				const ok = await setExtensionEnabledSafe(
+					extension.id,
+					enable ? toggle : !toggle,
+					{swallow: true},
+				);
 				if (!ok) {
 					extension.mayDisable = false;
 				}
@@ -92,7 +101,7 @@
 	}
 
 	function handleUninstalled(deleted: string) {
-		extensions = extensions.filter(({ id }) => id !== deleted);
+		extensions = extensions.filter(({id}) => id !== deleted);
 	}
 
 	async function handleInstalled(installed: chrome.management.ExtensionInfo) {
@@ -103,14 +112,14 @@
 	}
 
 	function handleEnabled(updated: chrome.management.ExtensionInfo) {
-		const extension = extensions.find(({ id }) => id === updated.id);
+		const extension = extensions.find(({id}) => id === updated.id);
 		if (extension) {
 			extension.enabled = true;
 		}
 	}
 
 	function handleDisabled(updated: chrome.management.ExtensionInfo) {
-		const extension = extensions.find(({ id }) => id === updated.id);
+		const extension = extensions.find(({id}) => id === updated.id);
 		if (extension) {
 			extension.enabled = false;
 		}

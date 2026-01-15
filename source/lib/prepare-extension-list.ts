@@ -1,5 +1,5 @@
-import type { ExtensionInfo } from './types';
-import optionsStorage, { getPinnedExtensions } from '../options-storage';
+import type {ExtensionInfo} from './types';
+import optionsStorage, {getPinnedExtensions} from '../options-storage';
 
 const IMMUTABLE_CACHE_KEY = 'immutable-extensions-cache';
 
@@ -82,13 +82,15 @@ export function sortExtensions<T extends chrome.management.ExtensionInfo>(
  * @param extensions - Raw Chrome extension info array
  * @returns Promise resolving to enhanced and sorted extension info array
  */
-export default async function prepareExtensionList(extensions: chrome.management.ExtensionInfo[]): Promise<ExtensionInfo[]> {
+export default async function prepareExtensionList(
+	extensions: chrome.management.ExtensionInfo[],
+): Promise<ExtensionInfo[]> {
 	const options = await optionsStorage.getAll();
 	const pinnedExtensions = getPinnedExtensions(options);
 
 	// Filter out non-extensions and self
 	const filteredExtensions = extensions.filter(
-		({ type, id }) => type === 'extension' && id !== chrome.runtime.id,
+		({type, id}) => type === 'extension' && id !== chrome.runtime.id,
 	);
 
 	// Sort extensions

@@ -3,7 +3,7 @@
 import assert from 'node:assert/strict';
 // eslint-disable-next-line ts/ban-ts-comment
 // @ts-expect-error
-import { describe, it } from 'node:test';
+import {describe, it} from 'node:test';
 
 async function loadModuleWithPlatform(platform: string) {
 	// Stub global navigator.platform before importing the module.
@@ -43,13 +43,25 @@ describe('replaceModifierIfMac', () => {
 describe('isHoldingModifier', () => {
 	it('non-Mac: returns true if ctrlKey is held', async () => {
 		const mod = await loadModuleWithPlatform('Win32');
-		assert.strictEqual(mod.isHoldingModifier({ ctrlKey: true, metaKey: false }), true);
-		assert.strictEqual(mod.isHoldingModifier({ ctrlKey: false, metaKey: true }), false);
+		assert.strictEqual(
+			mod.isHoldingModifier({ctrlKey: true, metaKey: false}),
+			true,
+		);
+		assert.strictEqual(
+			mod.isHoldingModifier({ctrlKey: false, metaKey: true}),
+			false,
+		);
 	});
 
 	it('Mac: returns true if metaKey is held', async () => {
 		const mod = await loadModuleWithPlatform('MacIntel');
-		assert.strictEqual(mod.isHoldingModifier({ ctrlKey: true, metaKey: false }), false);
-		assert.strictEqual(mod.isHoldingModifier({ ctrlKey: false, metaKey: true }), true);
+		assert.strictEqual(
+			mod.isHoldingModifier({ctrlKey: true, metaKey: false}),
+			false,
+		);
+		assert.strictEqual(
+			mod.isHoldingModifier({ctrlKey: false, metaKey: true}),
+			true,
+		);
 	});
 });

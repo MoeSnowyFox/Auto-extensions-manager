@@ -3,7 +3,10 @@ interface IconInfo {
 	url: string;
 }
 
-export default function pickBestIcon(icons: IconInfo[] | undefined, size: number = 16): string {
+export default function pickBestIcon(
+	icons: IconInfo[] | undefined,
+	size: number = 16,
+): string {
 	// Get retina size if necessary
 	size *= globalThis.devicePixelRatio;
 

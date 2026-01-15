@@ -40,5 +40,101 @@
 	},
 	"uninstall": {
 		"message": "Remove from Chrome"
+	},
+	"profileGroups": {
+		"message": "Profile Groups"
+	},
+	"enableProfileGroups": {
+		"message": "Enable Profile Groups"
+	},
+	"noProfiles": {
+		"message": "No profile groups configured yet."
+	},
+	"profilesDescription": {
+		"message": "Profile groups let you automatically enable/disable extensions based on the websites you visit."
+	},
+	"addProfile": {
+		"message": "Add New Profile Group"
+	},
+	"editProfile": {
+		"message": "Edit Profile"
+	},
+	"newProfile": {
+		"message": "New Profile"
+	},
+	"profileName": {
+		"message": "Profile Name"
+	},
+	"profileNamePlaceholder": {
+		"message": "e.g., Development Sites"
+	},
+	"profileNameRequired": {
+		"message": "Profile name is required"
+	},
+	"priority": {
+		"message": "Priority"
+	},
+	"higherFirst": {
+		"message": "higher = checked first"
+	},
+	"urlConditions": {
+		"message": "URL Conditions"
+	},
+	"urlConditionsHelp": {
+		"message": "The profile will be applied when the URL matches ANY of these conditions."
+	},
+	"atLeastOneCondition": {
+		"message": "At least one condition is required"
+	},
+	"addCondition": {
+		"message": "Add Condition"
+	},
+	"hostWildcard": {
+		"message": "Host Wildcard"
+	},
+	"urlWildcard": {
+		"message": "URL Wildcard"
+	},
+	"regex": {
+		"message": "Regex"
+	},
+	"extensionStates": {
+		"message": "Extension States"
+	},
+	"extensionStatesHelp": {
+		"message": "Configure how each extension should behave when this profile is active."
+	},
+	"keepState": {
+		"message": "Keep current"
+	},
+	"enable": {
+		"message": "Enable"
+	},
+	"disable": {
+		"message": "Disable"
+	},
+	"save": {
+		"message": "Save"
+	},
+	"cancel": {
+		"message": "Cancel"
+	},
+	"edit": {
+		"message": "Edit"
+	},
+	"delete": {
+		"message": "Delete"
+	},
+	"confirmDeleteProfile": {
+		"message": "Are you sure you want to delete this profile?"
+	},
+	"conditions": {
+		"message": "conditions"
+	},
+	"extensions": {
+		"message": "extensions"
+	},
+	"backToOptions": {
+		"message": "Back to Options"
 	}
 }

@@ -1,12 +1,15 @@
-import type { ToggleFunction } from './types';
-import { isHoldingModifier } from './cmd-key';
+import type {ToggleFunction} from './types';
+import {isHoldingModifier} from './cmd-key';
 
 export default class UndoStack {
 	private _undoStack: [ToggleFunction, ToggleFunction | undefined][] = [];
 	private _redoStack: [ToggleFunction, ToggleFunction | undefined][] = [];
 
 	constructor(element?: Window | HTMLElement) {
-		element?.addEventListener('keydown', this.#keyboardEventListener as EventListener);
+		element?.addEventListener(
+			'keydown',
+			this.#keyboardEventListener as EventListener,
+		);
 	}
 
 	#keyboardEventListener = (event: KeyboardEvent): void => {

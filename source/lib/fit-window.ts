@@ -18,14 +18,28 @@ function clamp(value: number, min: number, max: number): number {
 
 export default function fitWindow(): void {
 	function doFit(): void {
-		const chromeWidth = Math.max(0, Math.min(50, window.outerWidth - window.innerWidth));
-		const chromeHeight = Math.max(0, Math.min(50, window.outerHeight - window.innerHeight));
+		const chromeWidth = Math.max(
+			0,
+			Math.min(50, window.outerWidth - window.innerWidth),
+		);
+		const chromeHeight = Math.max(
+			0,
+			Math.min(50, window.outerHeight - window.innerHeight),
+		);
 
 		const contentWidth = document.body.scrollWidth;
 		const contentHeight = document.body.scrollHeight;
 
-		const targetWidth = clamp(contentWidth + chromeWidth + SCROLLBAR_WIDTH, MIN_WIDTH, MAX_WIDTH);
-		const targetHeight = clamp(contentHeight + chromeHeight, MIN_HEIGHT, MAX_HEIGHT);
+		const targetWidth = clamp(
+			contentWidth + chromeWidth + SCROLLBAR_WIDTH,
+			MIN_WIDTH,
+			MAX_WIDTH,
+		);
+		const targetHeight = clamp(
+			contentHeight + chromeHeight,
+			MIN_HEIGHT,
+			MAX_HEIGHT,
+		);
 
 		window.resizeTo(targetWidth, targetHeight);
 	}
@@ -47,5 +61,5 @@ export default function fitWindow(): void {
 		}
 	});
 
-	observer.observe(document.body, { childList: true, subtree: true });
+	observer.observe(document.body, {childList: true, subtree: true});
 }

@@ -1,4 +1,4 @@
-import { mount } from 'svelte';
+import {mount} from 'svelte';
 import App from './app.svelte';
 import fitWindow from './lib/fit-window';
 import preventMultipleWindows from './lib/single-window';

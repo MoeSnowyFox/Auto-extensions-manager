@@ -22,4 +22,3 @@
 	"include": ["source/**/*.ts", "source/**/*.svelte"],
 	"exclude": ["**/*.test.ts"]
 }
-
