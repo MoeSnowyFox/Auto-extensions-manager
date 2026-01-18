@@ -52,6 +52,149 @@
 		"message": "Noņemt šo paplašinājumu",
 		"hash": "a04a561e0b5c8b0210a17382781cabd1"
 	},
-
+	"profileGroups": {
+		"message": "Profila grupas"
+	},
+	"enableProfileGroups": {
+		"message": "Iespējot profila grupas"
+	},
+	"noProfiles": {
+		"message": "Vēl nav konfigurētas profila grupas."
+	},
+	"profilesDescription": {
+		"message": "Profila grupas ļauj automātiski iespējot/atspējot paplašinājumus atkarībā no vietnēm, kuras apmeklējat."
+	},
+	"addProfile": {
+		"message": "Pievienot jaunu profila grupu"
+	},
+	"editProfile": {
+		"message": "Rediģēt profilu"
+	},
+	"newProfile": {
+		"message": "Jauns profils"
+	},
+	"profileName": {
+		"message": "Profila nosaukums"
+	},
+	"profileNamePlaceholder": {
+		"message": "piem., izstrādes vietnes"
+	},
+	"profileNameRequired": {
+		"message": "Profila nosaukums ir obligāts"
+	},
+	"priority": {
+		"message": "Prioritāte"
+	},
+	"higherFirst": {
+		"message": "augstāks = pārbaudīts pirmais"
+	},
+	"urlConditions": {
+		"message": "URL nosacījumi"
+	},
+	"urlConditionsHelp": {
+		"message": "Profils tiks pielietots, kad URL atbilst VIENAM no šiem nosacījumiem."
+	},
+	"atLeastOneCondition": {
+		"message": "Nepieciešams vismaz viens nosacījums"
+	},
+	"addCondition": {
+		"message": "Pievienot nosacījumu"
+	},
+	"hostWildcard": {
+		"message": "Host vietturis"
+	},
+	"urlWildcard": {
+		"message": "URL vietturis"
+	},
+	"regex": {
+		"message": "Regex"
+	},
+	"extensionStates": {
+		"message": "Paplašinājumu stāvokļi"
+	},
+	"extensionStatesHelp": {
+		"message": "Konfigurējiet, kā katram paplašinājumam jārīkojas, kad šis profils ir aktīvs."
+	},
+	"keepState": {
+		"message": "Saglabāt pašreizējo stāvokli"
+	},
+	"enable": {
+		"message": "Iespējot"
+	},
+	"disable": {
+		"message": "Atspējot"
+	},
+	"save": {
+		"message": "Saglabāt"
+	},
+	"cancel": {
+		"message": "Atcelt"
+	},
+	"edit": {
+		"message": "Rediģēt"
+	},
+	"delete": {
+		"message": "Dzēst"
+	},
+	"disabled": {
+		"message": "Atspējots"
+	},
+	"confirmDeleteProfile": {
+		"message": "Vai tiešām vēlaties dzēst šo profilu?"
+	},
+	"conditions": {
+		"message": "Nosacījumi"
+	},
+	"extensions": {
+		"message": "Paplašinājumi"
+	},
+	"defaultProfile": {
+		"message": "Noklusējuma profils"
+	},
+	"defaultProfileDescription": {
+		"message": "Noklusējuma profils tiek pielietots, ja neviens cits profils neatbilst. Konfigurējiet paplašinājumu pamatstāvokli."
+	},
+	"noDefaultProfile": {
+		"message": "Nav noklusējuma profila"
+	},
+	"noDefaultProfileDescription": {
+		"message": "Konfigurējiet noklusējuma profilu, lai iestatītu paplašinājumu pamatstāvokli."
+	},
+	"configureDefault": {
+		"message": "Konfigurēt noklusējuma profilu"
+	},
+	"editDefaultProfile": {
+		"message": "Rediģēt noklusējuma profilu"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "Iestatiet paplašinājumu noklusējuma stāvokli, ja neviens cits profils neatbilst."
+	},
+	"configure": {
+		"message": "Konfigurēt"
+	},
+	"customProfiles": {
+		"message": "Pielāgoti profili"
+	},
+	"basicInfo": {
+		"message": "Pamata informācija"
+	},
+	"darkMode": {
+		"message": "Tumšais režīms"
+	},
+	"lightMode": {
+		"message": "Gaišais režīms"
+	},
+	"backToOptions": {
+		"message": "Atpakaļ uz opcijām"
+	},
+	"settings": {
+		"message": "Iestatījumi"
+	},
+	"searchExtensions": {
+		"message": "Meklēt paplašinājumus..."
+	},
+	"enabled": {
+		"message": "Iespējots"
+	},
 	"__WET_LOCALE__": {"message": "lv"}
 }

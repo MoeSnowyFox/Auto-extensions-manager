@@ -40,5 +40,149 @@
 	},
 	"uninstall": {
 		"message": "この拡張機能をアンインストールする"
+	},
+	"profileGroups": {
+		"message": "プロファイルグループ"
+	},
+	"enableProfileGroups": {
+		"message": "プロファイルグループを有効にする"
+	},
+	"noProfiles": {
+		"message": "まだプロファイルグループが設定されていません。"
+	},
+	"profilesDescription": {
+		"message": "プロファイルグループを使うと、訪問したウェブサイトに基づいて拡張機能を自動的に有効/無効にできます。"
+	},
+	"addProfile": {
+		"message": "新しいプロファイルグループを追加"
+	},
+	"editProfile": {
+		"message": "プロファイルを編集"
+	},
+	"newProfile": {
+		"message": "新しいプロファイル"
+	},
+	"profileName": {
+		"message": "プロファイル名"
+	},
+	"profileNamePlaceholder": {
+		"message": "例: 開発サイト"
+	},
+	"profileNameRequired": {
+		"message": "プロファイル名は必須です"
+	},
+	"priority": {
+		"message": "優先度"
+	},
+	"higherFirst": {
+		"message": "優先度が高いものほど先にチェックされます"
+	},
+	"urlConditions": {
+		"message": "URL条件"
+	},
+	"urlConditionsHelp": {
+		"message": "URLがこれらの条件のいずれかに一致すると、プロファイルが適用されます。"
+	},
+	"atLeastOneCondition": {
+		"message": "少なくとも1つの条件が必要です"
+	},
+	"addCondition": {
+		"message": "条件を追加"
+	},
+	"hostWildcard": {
+		"message": "ホストのワイルドカード"
+	},
+	"urlWildcard": {
+		"message": "URLのワイルドカード"
+	},
+	"regex": {
+		"message": "正規表現"
+	},
+	"extensionStates": {
+		"message": "拡張機能の状態"
+	},
+	"extensionStatesHelp": {
+		"message": "このプロファイルが有効なときに各拡張機能がどう振る舞うかを設定します。"
+	},
+	"keepState": {
+		"message": "現在の状態を保持"
+	},
+	"enable": {
+		"message": "有効にする"
+	},
+	"disable": {
+		"message": "無効にする"
+	},
+	"save": {
+		"message": "保存"
+	},
+	"cancel": {
+		"message": "キャンセル"
+	},
+	"edit": {
+		"message": "編集"
+	},
+	"delete": {
+		"message": "削除"
+	},
+	"disabled": {
+		"message": "無効"
+	},
+	"confirmDeleteProfile": {
+		"message": "本当にこのプロファイルを削除しますか？"
+	},
+	"conditions": {
+		"message": "条件"
+	},
+	"extensions": {
+		"message": "拡張機能"
+	},
+	"defaultProfile": {
+		"message": "デフォルトプロファイル"
+	},
+	"defaultProfileDescription": {
+		"message": "別のプロファイルが一致しないときにデフォルトプロファイルが適用されます。拡張機能の基準となる状態を設定してください。"
+	},
+	"noDefaultProfile": {
+		"message": "デフォルトプロファイルがありません"
+	},
+	"noDefaultProfileDescription": {
+		"message": "デフォルトプロファイルを設定して、拡張機能の基準状態を定めてください。"
+	},
+	"configureDefault": {
+		"message": "デフォルトプロファイルを設定"
+	},
+	"editDefaultProfile": {
+		"message": "デフォルトプロファイルを編集"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "他のプロファイルが一致しない場合に拡張機能のデフォルト状態を設定します。"
+	},
+	"configure": {
+		"message": "設定"
+	},
+	"customProfiles": {
+		"message": "カスタムプロファイル"
+	},
+	"basicInfo": {
+		"message": "基本情報"
+	},
+	"darkMode": {
+		"message": "ダークモード"
+	},
+	"lightMode": {
+		"message": "ライトモード"
+	},
+	"backToOptions": {
+		"message": "オプションに戻る"
+	},
+	"settings": {
+		"message": "設定"
+	},
+	"searchExtensions": {
+		"message": "拡張機能を検索..."
+	},
+	"enabled": {
+		"message": "有効"
 	}
 }

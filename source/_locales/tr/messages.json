@@ -51,5 +51,149 @@
 	},
 	"stickyInfoMsg": {
 		"message": "Uzantıları listenin en üstüne sabitlemek için <kbd>Ctrl+Tıklama</kbd> yapabilirsiniz."
+	},
+	"profileGroups": {
+		"message": "Profil Grupları"
+	},
+	"enableProfileGroups": {
+		"message": "Profil Gruplarını Etkinleştir"
+	},
+	"noProfiles": {
+		"message": "Henüz profil grubu yapılandırılmadı."
+	},
+	"profilesDescription": {
+		"message": "Profil grupları, ziyaret ettiğiniz web sitelerine göre uzantıları otomatik olarak etkinleştirmenize/devre dışı bırakmanıza olanak tanır."
+	},
+	"addProfile": {
+		"message": "Yeni profil grubu ekle"
+	},
+	"editProfile": {
+		"message": "Profili düzenle"
+	},
+	"newProfile": {
+		"message": "Yeni profil"
+	},
+	"profileName": {
+		"message": "Profil adı"
+	},
+	"profileNamePlaceholder": {
+		"message": "örn. Geliştirici siteleri"
+	},
+	"profileNameRequired": {
+		"message": "Profil adı zorunludur"
+	},
+	"priority": {
+		"message": "Öncelik"
+	},
+	"higherFirst": {
+		"message": "daha yüksek = önce kontrol edilir"
+	},
+	"urlConditions": {
+		"message": "URL Koşulları"
+	},
+	"urlConditionsHelp": {
+		"message": "URL, bu koşullardan HERHANGİ biriyle eşleştiğinde profil uygulanır."
+	},
+	"atLeastOneCondition": {
+		"message": "En az bir koşul gereklidir"
+	},
+	"addCondition": {
+		"message": "Koşul ekle"
+	},
+	"hostWildcard": {
+		"message": "Sunucu joker karakteri"
+	},
+	"urlWildcard": {
+		"message": "URL joker karakteri"
+	},
+	"regex": {
+		"message": "Regex"
+	},
+	"extensionStates": {
+		"message": "Uzantı durumları"
+	},
+	"extensionStatesHelp": {
+		"message": "Bu profil etkin olduğunda her uzantının nasıl davranması gerektiğini yapılandırın."
+	},
+	"keepState": {
+		"message": "Mevcut durumu koru"
+	},
+	"enable": {
+		"message": "Etkinleştir"
+	},
+	"disable": {
+		"message": "Devre dışı bırak"
+	},
+	"save": {
+		"message": "Kaydet"
+	},
+	"cancel": {
+		"message": "İptal"
+	},
+	"edit": {
+		"message": "Düzenle"
+	},
+	"delete": {
+		"message": "Kaldır"
+	},
+	"disabled": {
+		"message": "Devre dışı"
+	},
+	"confirmDeleteProfile": {
+		"message": "Bu profili silmek istediğinizden emin misiniz?"
+	},
+	"conditions": {
+		"message": "koşullar"
+	},
+	"extensions": {
+		"message": "uzantılar"
+	},
+	"defaultProfile": {
+		"message": "Varsayılan profil"
+	},
+	"defaultProfileDescription": {
+		"message": "Varsayılan profil, başka hiçbir profil eşleşmediğinde uygulanır. Uzantılarınız için temel durumu yapılandırın."
+	},
+	"noDefaultProfile": {
+		"message": "Varsayılan profil yok"
+	},
+	"noDefaultProfileDescription": {
+		"message": "Uzantılar için temel durumu ayarlamak üzere varsayılan bir profil yapılandırın."
+	},
+	"configureDefault": {
+		"message": "Varsayılan profili yapılandır"
+	},
+	"editDefaultProfile": {
+		"message": "Varsayılan profili düzenle"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "Başka hiçbir profil eşleşmediğinde uzantıların varsayılan durumunu ayarlayın."
+	},
+	"configure": {
+		"message": "Yapılandır"
+	},
+	"customProfiles": {
+		"message": "Özel profiller"
+	},
+	"basicInfo": {
+		"message": "Temel bilgi"
+	},
+	"darkMode": {
+		"message": "Koyu Mod"
+	},
+	"lightMode": {
+		"message": "Açık Mod"
+	},
+	"backToOptions": {
+		"message": "Seçeneklere geri dön"
+	},
+	"settings": {
+		"message": "Ayarlar"
+	},
+	"searchExtensions": {
+		"message": "Uzantılarda ara..."
+	},
+	"enabled": {
+		"message": "Etkin"
 	}
 }

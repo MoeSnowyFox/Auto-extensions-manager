@@ -40,5 +40,149 @@
 	},
 	"uninstall": {
 		"message": "Eliminar"
+	},
+	"profileGroups": {
+		"message": "Grupos de perfiles"
+	},
+	"enableProfileGroups": {
+		"message": "Habilitar grupos de perfiles"
+	},
+	"noProfiles": {
+		"message": "Aún no se han configurado grupos de perfiles."
+	},
+	"profilesDescription": {
+		"message": "Los grupos de perfiles te permiten habilitar/deshabilitar extensiones automáticamente según los sitios web que visites."
+	},
+	"addProfile": {
+		"message": "Agregar nuevo grupo de perfiles"
+	},
+	"editProfile": {
+		"message": "Editar grupo de perfiles"
+	},
+	"newProfile": {
+		"message": "Nuevo grupo de perfiles"
+	},
+	"profileName": {
+		"message": "Nombre del perfil"
+	},
+	"profileNamePlaceholder": {
+		"message": "Por ejemplo: Sitios de desarrollo"
+	},
+	"profileNameRequired": {
+		"message": "El nombre del perfil es obligatorio"
+	},
+	"priority": {
+		"message": "Prioridad"
+	},
+	"higherFirst": {
+		"message": "mayor = se revisa primero"
+	},
+	"urlConditions": {
+		"message": "Condiciones de URL"
+	},
+	"urlConditionsHelp": {
+		"message": "El perfil se aplicará cuando la URL coincida con CUALQUIERA de estas condiciones."
+	},
+	"atLeastOneCondition": {
+		"message": "Se requiere al menos una condición"
+	},
+	"addCondition": {
+		"message": "Agregar condición"
+	},
+	"hostWildcard": {
+		"message": "Comodín de host"
+	},
+	"urlWildcard": {
+		"message": "Comodín de URL"
+	},
+	"regex": {
+		"message": "Expresión regular"
+	},
+	"extensionStates": {
+		"message": "Estados de extensión"
+	},
+	"extensionStatesHelp": {
+		"message": "Configura cómo debe comportarse cada extensión cuando este perfil esté activo."
+	},
+	"keepState": {
+		"message": "Mantener actual"
+	},
+	"enable": {
+		"message": "Habilitar"
+	},
+	"disable": {
+		"message": "Deshabilitar"
+	},
+	"save": {
+		"message": "Guardar"
+	},
+	"cancel": {
+		"message": "Cancelar"
+	},
+	"edit": {
+		"message": "Editar"
+	},
+	"delete": {
+		"message": "Eliminar"
+	},
+	"disabled": {
+		"message": "Deshabilitado"
+	},
+	"confirmDeleteProfile": {
+		"message": "¿Estás seguro de que deseas eliminar este perfil?"
+	},
+	"conditions": {
+		"message": "condiciones"
+	},
+	"extensions": {
+		"message": "extensiones"
+	},
+	"defaultProfile": {
+		"message": "Perfil predeterminado"
+	},
+	"defaultProfileDescription": {
+		"message": "El perfil predeterminado se aplica cuando ningún otro perfil coincide. Configura el estado base para tus extensiones."
+	},
+	"noDefaultProfile": {
+		"message": "Sin perfil predeterminado"
+	},
+	"noDefaultProfileDescription": {
+		"message": "Configura un perfil predeterminado para setear el estado base para tus extensiones."
+	},
+	"configureDefault": {
+		"message": "Configurar perfil predeterminado"
+	},
+	"editDefaultProfile": {
+		"message": "Editar perfil predeterminado"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "Establece el estado predeterminado para las extensiones cuando ningún otro perfil coincida."
+	},
+	"configure": {
+		"message": "Configurar"
+	},
+	"customProfiles": {
+		"message": "Perfiles personalizados"
+	},
+	"basicInfo": {
+		"message": "Información básica"
+	},
+	"darkMode": {
+		"message": "Modo oscuro"
+	},
+	"lightMode": {
+		"message": "Modo claro"
+	},
+	"backToOptions": {
+		"message": "Volver a opciones"
+	},
+	"settings": {
+		"message": "Configuraciones"
+	},
+	"searchExtensions": {
+		"message": "Buscar extensiones..."
+	},
+	"enabled": {
+		"message": "Habilitado"
 	}
 }

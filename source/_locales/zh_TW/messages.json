@@ -51,5 +51,149 @@
 	"uninstall": {
 		"message": "卸載這個擴展",
 		"hash": "6c51642469a9fec1b394358b0a2ada5b"
+	},
+	"profileGroups": {
+		"message": "設定群組"
+	},
+	"enableProfileGroups": {
+		"message": "啟用設定群組"
+	},
+	"noProfiles": {
+		"message": "尚未配置任何設定群組。"
+	},
+	"profilesDescription": {
+		"message": "設定群組可根據您訪問的網站自動啟用/停用擴充功能。"
+	},
+	"addProfile": {
+		"message": "新增設定群組"
+	},
+	"editProfile": {
+		"message": "編輯設定群組"
+	},
+	"newProfile": {
+		"message": "新設定群組"
+	},
+	"profileName": {
+		"message": "設定群組名稱"
+	},
+	"profileNamePlaceholder": {
+		"message": "例如：開發網站"
+	},
+	"profileNameRequired": {
+		"message": "設定群組名稱為必填"
+	},
+	"priority": {
+		"message": "優先權"
+	},
+	"higherFirst": {
+		"message": "數字越大優先檢查"
+	},
+	"urlConditions": {
+		"message": "URL 匹配條件"
+	},
+	"urlConditionsHelp": {
+		"message": "當 URL 符合下列任一條件時，將套用此設定群組。"
+	},
+	"atLeastOneCondition": {
+		"message": "至少需要一個匹配條件"
+	},
+	"addCondition": {
+		"message": "新增條件"
+	},
+	"hostWildcard": {
+		"message": "主機萬用字元"
+	},
+	"urlWildcard": {
+		"message": "URL 萬用字元"
+	},
+	"regex": {
+		"message": "正規表示法"
+	},
+	"extensionStates": {
+		"message": "擴充功能狀態"
+	},
+	"extensionStatesHelp": {
+		"message": "當此設定群組啟用時，設定每個擴充功能的行為。"
+	},
+	"keepState": {
+		"message": "保留目前狀態"
+	},
+	"enable": {
+		"message": "啟用"
+	},
+	"disable": {
+		"message": "停用"
+	},
+	"save": {
+		"message": "儲存"
+	},
+	"cancel": {
+		"message": "取消"
+	},
+	"edit": {
+		"message": "編輯"
+	},
+	"delete": {
+		"message": "刪除"
+	},
+	"disabled": {
+		"message": "已停用"
+	},
+	"confirmDeleteProfile": {
+		"message": "確定要刪除此設定群組嗎？"
+	},
+	"conditions": {
+		"message": "個條件"
+	},
+	"extensions": {
+		"message": "個擴充功能"
+	},
+	"defaultProfile": {
+		"message": "預設設定群組"
+	},
+	"defaultProfileDescription": {
+		"message": "當沒有其他設定群組符合時，預設設定群組會套用，作為擴充功能的基礎狀態。"
+	},
+	"noDefaultProfile": {
+		"message": "尚未配置預設設定群組"
+	},
+	"noDefaultProfileDescription": {
+		"message": "請配置預設群組以設定擴充功能的基礎狀態。"
+	},
+	"configureDefault": {
+		"message": "配置預設群組"
+	},
+	"editDefaultProfile": {
+		"message": "編輯預設群組"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "當沒有其他設定群組符合時，使用此處的擴充功能狀態。"
+	},
+	"configure": {
+		"message": "配置"
+	},
+	"customProfiles": {
+		"message": "自訂設定群組"
+	},
+	"basicInfo": {
+		"message": "基本資訊"
+	},
+	"darkMode": {
+		"message": "深色模式"
+	},
+	"lightMode": {
+		"message": "淺色模式"
+	},
+	"backToOptions": {
+		"message": "返回設定"
+	},
+	"settings": {
+		"message": "設定"
+	},
+	"searchExtensions": {
+		"message": "搜尋擴充功能..."
+	},
+	"enabled": {
+		"message": "已啟用"
 	}
 }

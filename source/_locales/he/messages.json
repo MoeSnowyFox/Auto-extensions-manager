@@ -40,5 +40,149 @@
 	},
 	"uninstall": {
 		"message": "להסיר את התוסף"
+	},
+	"profileGroups": {
+		"message": "קבוצות פרופילים"
+	},
+	"enableProfileGroups": {
+		"message": "הפעל קבוצות פרופילים"
+	},
+	"noProfiles": {
+		"message": "עדיין לא הוגדרו קבוצות פרופילים."
+	},
+	"profilesDescription": {
+		"message": "קבוצות פרופילים מאפשרות להפעיל/לבטל תוספים אוטומטית בהתאם לאתרים שבהם אתה מבקר."
+	},
+	"addProfile": {
+		"message": "הוסף קבוצת פרופילים חדשה"
+	},
+	"editProfile": {
+		"message": "ערוך פרופיל"
+	},
+	"newProfile": {
+		"message": "פרופיל חדש"
+	},
+	"profileName": {
+		"message": "שם הפרופיל"
+	},
+	"profileNamePlaceholder": {
+		"message": "למשל: אתרי פיתוח"
+	},
+	"profileNameRequired": {
+		"message": "נדרש שם פרופיל"
+	},
+	"priority": {
+		"message": "עדיפות"
+	},
+	"higherFirst": {
+		"message": "גבוה = נבדק ראשון"
+	},
+	"urlConditions": {
+		"message": "תנאי URL"
+	},
+	"urlConditionsHelp": {
+		"message": "הפרופיל יוחל כאשר ה-URL יתאים לאחת מהתנאים האלה."
+	},
+	"atLeastOneCondition": {
+		"message": "נדרש לפחות תנאי אחד"
+	},
+	"addCondition": {
+		"message": "הוסף תנאי"
+	},
+	"hostWildcard": {
+		"message": "תו כלל" 
+	},
+	"urlWildcard": {
+		"message": "תו כלל לכתובת"
+	},
+	"regex": {
+		"message": "רגקס"
+	},
+	"extensionStates": {
+		"message": "מצבי תוספים"
+	},
+	"extensionStatesHelp": {
+		"message": "הגדר כיצד כל תוסף צריך להתנהג כאשר פרופיל זה פעיל."
+	},
+	"keepState": {
+		"message": "השאר כפי שהוא"
+	},
+	"enable": {
+		"message": "הפעל"
+	},
+	"disable": {
+		"message": "כבה"
+	},
+	"save": {
+		"message": "שמור"
+	},
+	"cancel": {
+		"message": "בטל"
+	},
+	"edit": {
+		"message": "ערוך"
+	},
+	"delete": {
+		"message": "מחק"
+	},
+	"disabled": {
+		"message": "כבוי"
+	},
+	"confirmDeleteProfile": {
+		"message": "האם אתה בטוח שברצונך למחוק פרופיל זה?"
+	},
+	"conditions": {
+		"message": "תנאים"
+	},
+	"extensions": {
+		"message": "תוספים"
+	},
+	"defaultProfile": {
+		"message": "פרופיל ברירת מחדל"
+	},
+	"defaultProfileDescription": {
+		"message": "פרופיל ברירת המחדל יופעל כאשר אף פרופיל אחר אינו מתאים. קבע את מצב הבסיס של התוספים שלך."
+	},
+	"noDefaultProfile": {
+		"message": "אין פרופיל ברירת מחדל"
+	},
+	"noDefaultProfileDescription": {
+		"message": "הגדר פרופיל ברירת מחדל כדי לקבוע את מצב הבסיס של התוספים שלך."
+	},
+	"configureDefault": {
+		"message": "הגדר פרופיל ברירת מחדל"
+	},
+	"editDefaultProfile": {
+		"message": "ערוך פרופיל ברירת מחדל"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "הגדר את מצב ברירת המחדל לתוספים כאשר אין פרופיל אחר שמתאים."
+	},
+	"configure": {
+		"message": "הגדר"
+	},
+	"customProfiles": {
+		"message": "פרופילים מותאמים"
+	},
+	"basicInfo": {
+		"message": "מידע בסיסי"
+	},
+	"darkMode": {
+		"message": "מצב כהה"
+	},
+	"lightMode": {
+		"message": "מצב בהיר"
+	},
+	"backToOptions": {
+		"message": "חזור להגדרות"
+	},
+	"settings": {
+		"message": "הגדרות"
+	},
+	"searchExtensions": {
+		"message": "חפש תוספים..."
+	},
+	"enabled": {
+		"message": "מופעל"
 	}
 }

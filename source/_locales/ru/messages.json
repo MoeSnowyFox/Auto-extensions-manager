@@ -40,5 +40,149 @@
 	},
 	"uninstall": {
 		"message": "Удалить это расширение"
+	},
+	"profileGroups": {
+		"message": "Группы профилей"
+	},
+	"enableProfileGroups": {
+		"message": "Включить группы профилей"
+	},
+	"noProfiles": {
+		"message": "Пока не настроены группы профилей."
+	},
+	"profilesDescription": {
+		"message": "Группы профилей позволяют автоматически включать/отключать расширения в зависимости от посещаемых вами сайтов."
+	},
+	"addProfile": {
+		"message": "Добавить новую группу профилей"
+	},
+	"editProfile": {
+		"message": "Редактировать профиль"
+	},
+	"newProfile": {
+		"message": "Новый профиль"
+	},
+	"profileName": {
+		"message": "Имя профиля"
+	},
+	"profileNamePlaceholder": {
+		"message": "напр., сайты для разработки"
+	},
+	"profileNameRequired": {
+		"message": "Требуется имя профиля"
+	},
+	"priority": {
+		"message": "Приоритет"
+	},
+	"higherFirst": {
+		"message": "больше = проверяется первым"
+	},
+	"urlConditions": {
+		"message": "Условия URL"
+	},
+	"urlConditionsHelp": {
+		"message": "Профиль будет применяться, когда URL соответствует ЛЮБОМУ из этих условий."
+	},
+	"atLeastOneCondition": {
+		"message": "Требуется как минимум одно условие"
+	},
+	"addCondition": {
+		"message": "Добавить условие"
+	},
+	"hostWildcard": {
+		"message": "Подстановочный символ хоста"
+	},
+	"urlWildcard": {
+		"message": "Подстановочный символ URL"
+	},
+	"regex": {
+		"message": "Регулярное выражение"
+	},
+	"extensionStates": {
+		"message": "Состояния расширений"
+	},
+	"extensionStatesHelp": {
+		"message": "Настройте, как каждое расширение должно вести себя, когда этот профиль активен."
+	},
+	"keepState": {
+		"message": "Сохранить текущее состояние"
+	},
+	"enable": {
+		"message": "Включить"
+	},
+	"disable": {
+		"message": "Отключить"
+	},
+	"save": {
+		"message": "Сохранить"
+	},
+	"cancel": {
+		"message": "Отмена"
+	},
+	"edit": {
+		"message": "Редактировать"
+	},
+	"delete": {
+		"message": "Удалить"
+	},
+	"disabled": {
+		"message": "Отключено"
+	},
+	"confirmDeleteProfile": {
+		"message": "Вы уверены, что хотите удалить этот профиль?"
+	},
+	"conditions": {
+		"message": "условия"
+	},
+	"extensions": {
+		"message": "расширения"
+	},
+	"defaultProfile": {
+		"message": "Профиль по умолчанию"
+	},
+	"defaultProfileDescription": {
+		"message": "Профиль по умолчанию применяется, когда ни один другой профиль не совпадает. Настройте базовое состояние для ваших расширений."
+	},
+	"noDefaultProfile": {
+		"message": "Нет профиля по умолчанию"
+	},
+	"noDefaultProfileDescription": {
+		"message": "Настройте профиль по умолчанию, чтобы задать базовое состояние для расширений."
+	},
+	"configureDefault": {
+		"message": "Настроить профиль по умолчанию"
+	},
+	"editDefaultProfile": {
+		"message": "Редактировать профиль по умолчанию"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "Установите состояние расширений по умолчанию, когда ни один другой профиль не совпадает."
+	},
+	"configure": {
+		"message": "Настроить"
+	},
+	"customProfiles": {
+		"message": "Пользовательские профили"
+	},
+	"basicInfo": {
+		"message": "Основная информация"
+	},
+	"darkMode": {
+		"message": "Тёмная тема"
+	},
+	"lightMode": {
+		"message": "Светлая тема"
+	},
+	"backToOptions": {
+		"message": "Вернуться к настройкам"
+	},
+	"settings": {
+		"message": "Настройки"
+	},
+	"searchExtensions": {
+		"message": "Поиск расширений..."
+	},
+	"enabled": {
+		"message": "Включено"
 	}
 }

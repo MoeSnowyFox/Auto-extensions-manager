@@ -51,5 +51,149 @@
 	"uninstall": {
 		"message": "Désinstaller",
 		"hash": "6c51642469a9fec1b394358b0a2ada5b"
+	},
+	"profileGroups": {
+		"message": "Groupes de profils"
+	},
+	"enableProfileGroups": {
+		"message": "Activer les groupes de profils"
+	},
+	"noProfiles": {
+		"message": "Aucun groupe de profils configuré pour le moment."
+	},
+	"profilesDescription": {
+		"message": "Les groupes de profils vous permettent d'activer/désactiver automatiquement les extensions en fonction des sites Web que vous visitez."
+	},
+	"addProfile": {
+		"message": "Ajouter un nouveau groupe de profils"
+	},
+	"editProfile": {
+		"message": "Modifier le groupe de profils"
+	},
+	"newProfile": {
+		"message": "Nouveau groupe de profils"
+	},
+	"profileName": {
+		"message": "Nom du profil"
+	},
+	"profileNamePlaceholder": {
+		"message": "par exemple : Sites de développement"
+	},
+	"profileNameRequired": {
+		"message": "Le nom du profil est requis"
+	},
+	"priority": {
+		"message": "Priorité"
+	},
+	"higherFirst": {
+		"message": "plus élevé = vérifié en premier"
+	},
+	"urlConditions": {
+		"message": "Conditions d'URL"
+	},
+	"urlConditionsHelp": {
+		"message": "Le profil sera appliqué lorsque l'URL correspond à L'UNE de ces conditions."
+	},
+	"atLeastOneCondition": {
+		"message": "Au moins une condition est requise"
+	},
+	"addCondition": {
+		"message": "Ajouter une condition"
+	},
+	"hostWildcard": {
+		"message": "Joker d'hôte"
+	},
+	"urlWildcard": {
+		"message": "Joker d'URL"
+	},
+	"regex": {
+		"message": "Expression régulière"
+	},
+	"extensionStates": {
+		"message": "États des extensions"
+	},
+	"extensionStatesHelp": {
+		"message": "Configurez le comportement de chaque extension lorsque ce profil est actif."
+	},
+	"keepState": {
+		"message": "Garder l'état actuel"
+	},
+	"enable": {
+		"message": "Activer"
+	},
+	"disable": {
+		"message": "Désactiver"
+	},
+	"save": {
+		"message": "Enregistrer"
+	},
+	"cancel": {
+		"message": "Annuler"
+	},
+	"edit": {
+		"message": "Modifier"
+	},
+	"delete": {
+		"message": "Supprimer"
+	},
+	"disabled": {
+		"message": "Désactivé"
+	},
+	"confirmDeleteProfile": {
+		"message": "Êtes-vous sûr de vouloir supprimer ce profil ?"
+	},
+	"conditions": {
+		"message": "conditions"
+	},
+	"extensions": {
+		"message": "extensions"
+	},
+	"defaultProfile": {
+		"message": "Profil par défaut"
+	},
+	"defaultProfileDescription": {
+		"message": "Le profil par défaut s'applique lorsqu'aucun autre profil ne correspond. Configurez l'état de base pour vos extensions."
+	},
+	"noDefaultProfile": {
+		"message": "Aucun profil par défaut"
+	},
+	"noDefaultProfileDescription": {
+		"message": "Configurez un profil par défaut pour définir l'état de base de vos extensions."
+	},
+	"configureDefault": {
+		"message": "Configurer le profil par défaut"
+	},
+	"editDefaultProfile": {
+		"message": "Modifier le profil par défaut"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "Définissez l'état par défaut des extensions lorsqu'aucun autre profil ne correspond."
+	},
+	"configure": {
+		"message": "Configurer"
+	},
+	"customProfiles": {
+		"message": "Profils personnalisés"
+	},
+	"basicInfo": {
+		"message": "Informations de base"
+	},
+	"darkMode": {
+		"message": "Mode sombre"
+	},
+	"lightMode": {
+		"message": "Mode clair"
+	},
+	"backToOptions": {
+		"message": "Retour aux options"
+	},
+	"settings": {
+		"message": "Paramètres"
+	},
+	"searchExtensions": {
+		"message": "Rechercher des extensions..."
+	},
+	"enabled": {
+		"message": "Activé"
 	}
 }

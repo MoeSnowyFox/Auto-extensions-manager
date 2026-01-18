@@ -52,6 +52,149 @@
 		"message": "Verwijderen uit Chrome",
 		"hash": "a04a561e0b5c8b0210a17382781cabd1"
 	},
-
+	"profileGroups": {
+		"message": "Profielgroepen"
+	},
+	"enableProfileGroups": {
+		"message": "Profielgroepen inschakelen"
+	},
+	"noProfiles": {
+		"message": "Nog geen profielgroepen geconfigureerd."
+	},
+	"profilesDescription": {
+		"message": "Profielgroepen laten je extensies automatisch in- of uitschakelen op basis van de websites die je bezoekt."
+	},
+	"addProfile": {
+		"message": "Nieuwe profielgroep toevoegen"
+	},
+	"editProfile": {
+		"message": "Profiel bewerken"
+	},
+	"newProfile": {
+		"message": "Nieuw profiel"
+	},
+	"profileName": {
+		"message": "Profielnaam"
+	},
+	"profileNamePlaceholder": {
+		"message": "bijv. Ontwikkel-sites"
+	},
+	"profileNameRequired": {
+		"message": "Profielnaam is vereist"
+	},
+	"priority": {
+		"message": "Prioriteit"
+	},
+	"higherFirst": {
+		"message": "hoger = eerst gecontroleerd"
+	},
+	"urlConditions": {
+		"message": "URL-voorwaarden"
+	},
+	"urlConditionsHelp": {
+		"message": "Het profiel wordt toegepast wanneer de URL AAN EEN van deze voorwaarden voldoet."
+	},
+	"atLeastOneCondition": {
+		"message": "Minimaal één voorwaarde is vereist"
+	},
+	"addCondition": {
+		"message": "Voorwaarde toevoegen"
+	},
+	"hostWildcard": {
+		"message": "Host wildcard"
+	},
+	"urlWildcard": {
+		"message": "URL wildcard"
+	},
+	"regex": {
+		"message": "Regex"
+	},
+	"extensionStates": {
+		"message": "Extensiestatussen"
+	},
+	"extensionStatesHelp": {
+		"message": "Configureer hoe elke extensie zich moet gedragen wanneer dit profiel actief is."
+	},
+	"keepState": {
+		"message": "Huidige status behouden"
+	},
+	"enable": {
+		"message": "Inschakelen"
+	},
+	"disable": {
+		"message": "Uitschakelen"
+	},
+	"save": {
+		"message": "Opslaan"
+	},
+	"cancel": {
+		"message": "Annuleren"
+	},
+	"edit": {
+		"message": "Bewerken"
+	},
+	"delete": {
+		"message": "Verwijderen"
+	},
+	"disabled": {
+		"message": "Uitgeschakeld"
+	},
+	"confirmDeleteProfile": {
+		"message": "Weet je zeker dat je dit profiel wilt verwijderen?"
+	},
+	"conditions": {
+		"message": "voorwaarden"
+	},
+	"extensions": {
+		"message": "extensies"
+	},
+	"defaultProfile": {
+		"message": "Standaardprofiel"
+	},
+	"defaultProfileDescription": {
+		"message": "Het standaardprofiel wordt toegepast wanneer geen ander profiel overeenkomt. Stel de basisstatus voor je extensies in."
+	},
+	"noDefaultProfile": {
+		"message": "Geen standaardprofiel"
+	},
+	"noDefaultProfileDescription": {
+		"message": "Configureer een standaardprofiel om de basisstatus voor je extensies in te stellen."
+	},
+	"configureDefault": {
+		"message": "Configureer standaardprofiel"
+	},
+	"editDefaultProfile": {
+		"message": "Bewerk standaardprofiel"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "Stel de standaardstatus in voor extensies wanneer geen ander profiel overeenkomt."
+	},
+	"configure": {
+		"message": "Configureren"
+	},
+	"customProfiles": {
+		"message": "Aangepaste profielen"
+	},
+	"basicInfo": {
+		"message": "Basisinformatie"
+	},
+	"darkMode": {
+		"message": "Donkere modus"
+	},
+	"lightMode": {
+		"message": "Lichte modus"
+	},
+	"backToOptions": {
+		"message": "Terug naar opties"
+	},
+	"settings": {
+		"message": "Instellingen"
+	},
+	"searchExtensions": {
+		"message": "Zoek extensies..."
+	},
+	"enabled": {
+		"message": "Ingeschakeld"
+	},
 	"__WET_LOCALE__": {"message": "nl"}
 }

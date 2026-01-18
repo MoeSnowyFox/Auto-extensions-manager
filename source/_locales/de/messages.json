@@ -40,5 +40,149 @@
 	},
 	"uninstall": {
 		"message": "Erweiterung entfernen…"
+	},
+	"profileGroups": {
+		"message": "Profilgruppen"
+	},
+	"enableProfileGroups": {
+		"message": "Profilgruppen aktivieren"
+	},
+	"noProfiles": {
+		"message": "Noch keine Profilgruppen konfiguriert."
+	},
+	"profilesDescription": {
+		"message": "Profilgruppen ermöglichen das automatische Aktivieren/Deaktivieren von Erweiterungen basierend auf den von Ihnen besuchten Websites."
+	},
+	"addProfile": {
+		"message": "Neue Profilgruppe hinzufügen"
+	},
+	"editProfile": {
+		"message": "Profil bearbeiten"
+	},
+	"newProfile": {
+		"message": "Neues Profil"
+	},
+	"profileName": {
+		"message": "Profilname"
+	},
+	"profileNamePlaceholder": {
+		"message": "z. B. Entwicklungsseiten"
+	},
+	"profileNameRequired": {
+		"message": "Profilname ist erforderlich"
+	},
+	"priority": {
+		"message": "Priorität"
+	},
+	"higherFirst": {
+		"message": "höher = zuerst geprüft"
+	},
+	"urlConditions": {
+		"message": "URL-Bedingungen"
+	},
+	"urlConditionsHelp": {
+		"message": "Das Profil wird angewendet, wenn die URL eine dieser Bedingungen erfüllt."
+	},
+	"atLeastOneCondition": {
+		"message": "Mindestens eine Bedingung ist erforderlich"
+	},
+	"addCondition": {
+		"message": "Bedingung hinzufügen"
+	},
+	"hostWildcard": {
+		"message": "Host-Platzhalter"
+	},
+	"urlWildcard": {
+		"message": "URL-Platzhalter"
+	},
+	"regex": {
+		"message": "Regulärer Ausdruck"
+	},
+	"extensionStates": {
+		"message": "Erweiterungszustände"
+	},
+	"extensionStatesHelp": {
+		"message": "Konfigurieren Sie, wie sich jede Erweiterung verhalten soll, wenn dieses Profil aktiv ist."
+	},
+	"keepState": {
+		"message": "Aktuellen Zustand beibehalten"
+	},
+	"enable": {
+		"message": "Aktivieren"
+	},
+	"disable": {
+		"message": "Deaktivieren"
+	},
+	"save": {
+		"message": "Speichern"
+	},
+	"cancel": {
+		"message": "Abbrechen"
+	},
+	"edit": {
+		"message": "Bearbeiten"
+	},
+	"delete": {
+		"message": "Löschen"
+	},
+	"disabled": {
+		"message": "Deaktiviert"
+	},
+	"confirmDeleteProfile": {
+		"message": "Möchten Sie dieses Profil wirklich löschen?"
+	},
+	"conditions": {
+		"message": "Bedingungen"
+	},
+	"extensions": {
+		"message": "Erweiterungen"
+	},
+	"defaultProfile": {
+		"message": "Standardprofil"
+	},
+	"defaultProfileDescription": {
+		"message": "Das Standardprofil wird angewendet, wenn kein anderes Profil übereinstimmt. Konfigurieren Sie den Basiszustand für Ihre Erweiterungen."
+	},
+	"noDefaultProfile": {
+		"message": "Kein Standardprofil"
+	},
+	"noDefaultProfileDescription": {
+		"message": "Konfigurieren Sie ein Standardprofil, um den Basiszustand für Ihre Erweiterungen festzulegen."
+	},
+	"configureDefault": {
+		"message": "Standardprofil konfigurieren"
+	},
+	"editDefaultProfile": {
+		"message": "Standardprofil bearbeiten"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "Legen Sie den Standardzustand für Erweiterungen fest, wenn kein anderes Profil übereinstimmt."
+	},
+	"configure": {
+		"message": "Konfigurieren"
+	},
+	"customProfiles": {
+		"message": "Benutzerdefinierte Profile"
+	},
+	"basicInfo": {
+		"message": "Grundlegende Informationen"
+	},
+	"darkMode": {
+		"message": "Dunkler Modus"
+	},
+	"lightMode": {
+		"message": "Heller Modus"
+	},
+	"backToOptions": {
+		"message": "Zurück zu den Optionen"
+	},
+	"settings": {
+		"message": "Einstellungen"
+	},
+	"searchExtensions": {
+		"message": "Erweiterungen suchen..."
+	},
+	"enabled": {
+		"message": "Aktiviert"
 	}
 }

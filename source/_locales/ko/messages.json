@@ -40,5 +40,149 @@
 	},
 	"uninstall": {
 		"message": "이 확장 기능을 제거하십시오"
+	},
+	"profileGroups": {
+		"message": "프로필 그룹"
+	},
+	"enableProfileGroups": {
+		"message": "프로필 그룹 사용"
+	},
+	"noProfiles": {
+		"message": "아직 프로필 그룹이 구성되지 않았습니다."
+	},
+	"profilesDescription": {
+		"message": "프로필 그룹을 사용하면 방문하는 웹사이트에 따라 확장 기능을 자동으로 활성화/비활성화할 수 있습니다."
+	},
+	"addProfile": {
+		"message": "새 프로필 그룹 추가"
+	},
+	"editProfile": {
+		"message": "프로필 편집"
+	},
+	"newProfile": {
+		"message": "새 프로필"
+	},
+	"profileName": {
+		"message": "프로필 이름"
+	},
+	"profileNamePlaceholder": {
+		"message": "예: 개발 사이트"
+	},
+	"profileNameRequired": {
+		"message": "프로필 이름은 필수입니다"
+	},
+	"priority": {
+		"message": "우선순위"
+	},
+	"higherFirst": {
+		"message": "높을수록 먼저 확인"
+	},
+	"urlConditions": {
+		"message": "URL 조건"
+	},
+	"urlConditionsHelp": {
+		"message": "URL이 이러한 조건 중 하나와 일치하면 프로필이 적용됩니다."
+	},
+	"atLeastOneCondition": {
+		"message": "최소 하나의 조건이 필요합니다"
+	},
+	"addCondition": {
+		"message": "조건 추가"
+	},
+	"hostWildcard": {
+		"message": "호스트 와일드카드"
+	},
+	"urlWildcard": {
+		"message": "URL 와일드카드"
+	},
+	"regex": {
+		"message": "정규식"
+	},
+	"extensionStates": {
+		"message": "확장 상태"
+	},
+	"extensionStatesHelp": {
+		"message": "이 프로필이 활성화되었을 때 각 확장의 동작을 구성하세요."
+	},
+	"keepState": {
+		"message": "현재 상태 유지"
+	},
+	"enable": {
+		"message": "활성화"
+	},
+	"disable": {
+		"message": "비활성화"
+	},
+	"save": {
+		"message": "저장"
+	},
+	"cancel": {
+		"message": "취소"
+	},
+	"edit": {
+		"message": "편집"
+	},
+	"delete": {
+		"message": "삭제"
+	},
+	"disabled": {
+		"message": "비활성화됨"
+	},
+	"confirmDeleteProfile": {
+		"message": "이 프로필을 삭제하시겠습니까?"
+	},
+	"conditions": {
+		"message": "조건"
+	},
+	"extensions": {
+		"message": "확장 기능"
+	},
+	"defaultProfile": {
+		"message": "기본 프로필"
+	},
+	"defaultProfileDescription": {
+		"message": "다른 프로필이 일치하지 않을 때 기본 프로필이 적용됩니다. 확장의 기본 상태를 구성하세요."
+	},
+	"noDefaultProfile": {
+		"message": "기본 프로필 없음"
+	},
+	"noDefaultProfileDescription": {
+		"message": "기본 프로필을 구성하여 확장의 기본 상태를 설정하세요."
+	},
+	"configureDefault": {
+		"message": "기본 프로필 구성"
+	},
+	"editDefaultProfile": {
+		"message": "기본 프로필 편집"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "다른 프로필이 일치하지 않을 때 확장의 기본 상태를 설정하세요."
+	},
+	"configure": {
+		"message": "구성"
+	},
+	"customProfiles": {
+		"message": "사용자 지정 프로필"
+	},
+	"basicInfo": {
+		"message": "기본 정보"
+	},
+	"darkMode": {
+		"message": "다크 모드"
+	},
+	"lightMode": {
+		"message": "라이트 모드"
+	},
+	"backToOptions": {
+		"message": "옵션으로 돌아가기"
+	},
+	"settings": {
+		"message": "설정"
+	},
+	"searchExtensions": {
+		"message": "확장 기능 검색..."
+	},
+	"enabled": {
+		"message": "활성화됨"
 	}
 }

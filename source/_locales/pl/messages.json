@@ -52,6 +52,149 @@
 		"message": "Usuń z Chrome",
 		"hash": "a04a561e0b5c8b0210a17382781cabd1"
 	},
-
+	"profileGroups": {
+		"message": "Grupy profili"
+	},
+	"enableProfileGroups": {
+		"message": "Włącz grupy profili"
+	},
+	"noProfiles": {
+		"message": "Brak skonfigurowanych grup profili."
+	},
+	"profilesDescription": {
+		"message": "Grupy profili pozwalają automatycznie włączać/wyłączać rozszerzenia w zależności od odwiedzanych stron."
+	},
+	"addProfile": {
+		"message": "Dodaj nową grupę profili"
+	},
+	"editProfile": {
+		"message": "Edytuj profil"
+	},
+	"newProfile": {
+		"message": "Nowy profil"
+	},
+	"profileName": {
+		"message": "Nazwa profilu"
+	},
+	"profileNamePlaceholder": {
+		"message": "np. Strony deweloperskie"
+	},
+	"profileNameRequired": {
+		"message": "Nazwa profilu jest wymagana"
+	},
+	"priority": {
+		"message": "Priorytet"
+	},
+	"higherFirst": {
+		"message": "wyższy = sprawdzany jako pierwszy"
+	},
+	"urlConditions": {
+		"message": "Warunki URL"
+	},
+	"urlConditionsHelp": {
+		"message": "Profil zostanie zastosowany, gdy adres URL pasuje do DOWOLNEGO z tych warunków."
+	},
+	"atLeastOneCondition": {
+		"message": "Wymagane jest co najmniej jedno warunek"
+	},
+	"addCondition": {
+		"message": "Dodaj warunek"
+	},
+	"hostWildcard": {
+		"message": "Host wildcard"
+	},
+	"urlWildcard": {
+		"message": "URL wildcard"
+	},
+	"regex": {
+		"message": "Regex"
+	},
+	"extensionStates": {
+		"message": "Stany rozszerzeń"
+	},
+	"extensionStatesHelp": {
+		"message": "Skonfiguruj, jak powinno zachowywać się każde rozszerzenie, gdy ten profil jest aktywny."
+	},
+	"keepState": {
+		"message": "Zachowaj bieżący stan"
+	},
+	"enable": {
+		"message": "Włącz"
+	},
+	"disable": {
+		"message": "Wyłącz"
+	},
+	"save": {
+		"message": "Zapisz"
+	},
+	"cancel": {
+		"message": "Anuluj"
+	},
+	"edit": {
+		"message": "Edytuj"
+	},
+	"delete": {
+		"message": "Usuń"
+	},
+	"disabled": {
+		"message": "Wyłączone"
+	},
+	"confirmDeleteProfile": {
+		"message": "Czy na pewno chcesz usunąć ten profil?"
+	},
+	"conditions": {
+		"message": "warunki"
+	},
+	"extensions": {
+		"message": "rozszerzenia"
+	},
+	"defaultProfile": {
+		"message": "Profil domyślny"
+	},
+	"defaultProfileDescription": {
+		"message": "Profil domyślny będzie stosowany, gdy żaden inny profil nie pasuje. Skonfiguruj stan bazowy dla swoich rozszerzeń."
+	},
+	"noDefaultProfile": {
+		"message": "Brak profilu domyślnego"
+	},
+	"noDefaultProfileDescription": {
+		"message": "Skonfiguruj profil domyślny, aby ustawić stan bazowy dla rozszerzeń."
+	},
+	"configureDefault": {
+		"message": "Skonfiguruj profil domyślny"
+	},
+	"editDefaultProfile": {
+		"message": "Edytuj profil domyślny"
+	},
+	"defaultExtensionStatesHelp": {
+		"message": "Ustaw domyślny stan rozszerzeń, gdy żaden inny profil nie pasuje."
+	},
+	"configure": {
+		"message": "Konfiguruj"
+	},
+	"customProfiles": {
+		"message": "Własne profile"
+	},
+	"basicInfo": {
+		"message": "Podstawowe informacje"
+	},
+	"darkMode": {
+		"message": "Tryb ciemny"
+	},
+	"lightMode": {
+		"message": "Tryb jasny"
+	},
+	"backToOptions": {
+		"message": "Powrót do opcji"
+	},
+	"settings": {
+		"message": "Ustawienia"
+	},
+	"searchExtensions": {
+		"message": "Szukaj rozszerzeń..."
+	},
+	"enabled": {
+		"message": "Włączone"
+	},
 	"__WET_LOCALE__": {"message": "pl"}
 }
